@@ -1,3 +1,18 @@
-<div class="p-4 m-2 bg-dark-teal rounded-xl">
-  <img src="" alt="">
+<div class="p-2 m-2 bg-dark-teal rounded-xl flex justify-between">
+  <img src="images/logo.svg" alt="" class="w-16 m-5 sm:w-20 sm:m3 md:m-2 md:w-32">
+  <div class="flex items-center">
+    <div
+      class="flex items-center border border-light-green rounded-md px-2 py-2 transition-all duration-300 overflow-hidden"
+      [ngClass]="isOpen ? 'w-44' : 'w-10'">
+      <!-- Search icon -->
+
+      <!-- Input (only visible when open) -->
+      @if (isOpen) {
+      <input type="text" placeholder="جستجو کنید..."
+        class=" mr-2 w-full bg-transparent outline-none text-light-green placeholder-light-green" />
+      }
+      <i class="pi pi-search text-light-green cursor-pointer" style="font-size: 1.5rem" (click)="toggleSearch()"></i>
+
+    </div>
+  </div>
 </div>
