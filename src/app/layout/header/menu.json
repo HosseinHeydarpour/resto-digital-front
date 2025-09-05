@@ -1,0 +1,18 @@
+[
+  {
+    "text": "خانه",
+    "icon": "pi pi-home"
+  },
+  {
+    "text": "سفارشات",
+    "icon": "pi pi-shopping-bag"
+  },
+  {
+    "text": "علاقه مندی ها",
+    "icon": "pi pi-heart"
+  },
+  {
+    "text": "سبد خرید",
+    "icon": "pi pi-shopping-cart"
+  }
+]
