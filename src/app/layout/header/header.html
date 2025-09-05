@@ -1,9 +1,24 @@
-<div class="p-2 m-2 bg-dark-teal rounded-xl flex justify-between">
-  <img src="images/logo.svg" alt="" class="w-16 m-5 sm:w-20 sm:m3 md:m-2 md:w-32">
+<div class="p-2 m-2 bg-dark-teal rounded-xl flex justify-between  xl:mx-16">
+  <div class="flex">
+    <img src="images/logo.svg" alt="" class="w-16 m-5 sm:w-20  md:m-2 md:w-32 xl:mr-8">
+    <div class="hidden md:flex items-center text-gray-400 ">
+      <ul class="flex gap-5 mr-6 font-extrabold">
+        @for (item of menuItems; track $index) {
+        <li class="flex flex-col items-center gap-2 cursor-pointer">
+          <i [class]="item.icon"></i>
+          <span>{{ item.text }}</span>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+
+
   <div class="flex items-center">
+    <!-- search bar -->
     <div
       class="flex items-center border border-light-green rounded-md px-2 py-2 transition-all duration-300 overflow-hidden"
-      [ngClass]="isOpen ? 'w-44' : 'w-10'">
+      [ngClass]="isOpen ? 'w-44 md:w-32' : 'w-10'">
       <!-- Search icon -->
 
       <!-- Input (only visible when open) -->
@@ -14,5 +29,6 @@
       <i class="pi pi-search text-light-green cursor-pointer" style="font-size: 1.5rem" (click)="toggleSearch()"></i>
 
     </div>
+
   </div>
 </div>

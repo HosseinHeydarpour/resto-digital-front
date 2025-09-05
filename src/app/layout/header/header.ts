@@ -1,6 +1,7 @@
 import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+import menu from "./menu.json";
 
 @Component({
   selector: "app-header",
@@ -11,6 +12,8 @@ import { Component } from "@angular/core";
 export class Header {
   isOpen = false;
   searchText = "";
+
+  menuItems: any[] = menu;
 
   toggleSearch() {
     this.isOpen = !this.isOpen;
