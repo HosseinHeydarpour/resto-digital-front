@@ -21,7 +21,7 @@
     </div>
 
     <div class="col-span-5 flex items-center justify-end mr-4 border border-blue-500 md:col-span-5">
-      <div class="border border-light-green rounded-md ml-3 opacity-70">
+      <div class="border border-light-green rounded-md ml-3 opacity-70" [ngClass]="isOpen?' md:w-[49%]':''">
         <form class="p-2">
           <!-- Animated input -->
           <input type="text" placeholder="جستجو کنید..."
@@ -30,6 +30,11 @@
           <!-- Search icon (always visible) -->
           <i class="pi pi-search text-light-green cursor-pointer" (click)="toggleSearch()"></i>
         </form>
+      </div>
+      <div class="md:w-[50%] flex justify-end items-center ml-1">
+        <button class="bg-light-green text-black px-5 py-3 font-semibold ml-1 rounded-md text-sm"> ورود |
+          ثبت نام
+        </button>
       </div>
     </div>
   </div>
