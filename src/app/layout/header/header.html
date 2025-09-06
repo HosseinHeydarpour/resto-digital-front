@@ -1,28 +1,41 @@
-<div class="p-2 m-2 bg-dark-teal rounded-xl flex justify-between  xl:mx-16">
-  <div class="flex">
-    <img src="images/logo.svg" alt="" class="w-16 m-5 sm:w-20  md:m-2 md:w-32 xl:mr-8">
-    <div class="hidden md:flex items-center text-gray-400 ">
-      <ul class="flex gap-5 mr-6 font-extrabold">
-        @for (item of menuItems; track $index) {
-        <li class="flex flex-col items-center gap-2 cursor-pointer">
-          <i [class]="item.icon"></i>
-          <span>{{ item.text }}</span>
-        </li>
-        }
-      </ul>
+<div class="p-2 m-2 bg-dark-teal rounded-xl flex justify-between xl:mx-16">
+  <div class="grid grid-cols-7 gap-2 w-full">
+    <div class="col-span-2 flex items-center">
+      <img src="images/logo.svg" alt="" class="m-3 md:m-2 xl:mr-8">
+    </div>
+    <div class="col-span-5 flex items-center justify-end mr-4">
+      <div class="border border-light-green rounded-md ml-3 opacity-70">
+        <form class="p-2">
+          <!-- Animated input -->
+          <input type="text" placeholder="جستجو کنید..."
+            class="bg-transparent outline-none text-light-green placeholder-light-green transition-all duration-500"
+            [ngClass]="isOpen ? 'w-[85%]' : 'w-0'" />
+          <!-- Search icon (always visible) -->
+          <i class="pi pi-search text-light-green cursor-pointer" (click)="toggleSearch()"></i>
+        </form>
+      </div>
     </div>
   </div>
+  <!--
+    <div class="flex">
+      <img src="images/logo.svg" alt="" class="w-16 m-4 sm:w-20  md:m-2 md:w-32 xl:mr-8">
+      <div class="hidden md:flex items-center text-gray-400 ">
+        <ul class="flex gap-5 mr-6 font-extrabold">
+          @for (item of menuItems; track $index) {
+          <li class="flex flex-col items-center gap-2 cursor-pointer">
+            <i [class]="item.icon"></i>
+            <span>{{ item.text }}</span>
+          </li>
+          }
+        </ul>
+      </div>
+    </div> -->
+  <!-- <div class="flex items-center">
 
-
-  <div class="flex items-center">
-    <!-- search bar -->
     <div
-      class="flex items-center border border-light-green rounded-md px-2 py-2 transition-all duration-300 overflow-hidden"
-      [ngClass]="isOpen ? 'w-44 md:w-32' : 'w-10'">
-      <!-- Search icon -->
-
-      <!-- Input (only visible when open) -->
-      @if (isOpen) {
+      class="flex items-center border border-light-green rounded-md px-2 py-2 ml-3 transition-all duration-300 overflow-hidden opacity-70"
+      [ngClass]="isOpen ? 'w-40 md:w-32' : 'w-10'">
+     @if (isOpen) {
       <input type="text" placeholder="جستجو کنید..."
         class=" mr-2 w-full bg-transparent outline-none text-light-green placeholder-light-green" />
       }
@@ -30,5 +43,5 @@
 
     </div>
 
-  </div>
+  </div> -->
 </div>
