@@ -11,6 +11,9 @@
             [ngClass]="{'text-white': activeIndex === $index, 'text-gray-400': activeIndex !== $index}">
             <i [class]="item.icon"></i>
             <span>{{ item.text }}</span>
+            @if (activeIndex===$index) {
+            <i class="pi pi-circle-fill" style="font-size: 0.25rem;"></i>
+            }
           </li>
           }
         </ul>
