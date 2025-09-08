@@ -1,21 +1,27 @@
 <div
-  class="p-8 m-2 bg-dark-teal rounded-xl flex justify-between md:m-4 lg:px-8 xl:mx-16 mt-10 font-extrabold [word-spacing:0.125rem] h-[15rem] overflow-hidden"
+  class="p-8 m-2 bg-dark-teal rounded-xl flex justify-between md:m-4 lg:px-8 xl:mx-16 mt-10 font-extrabold [word-spacing:0.125rem] h-[15rem] overflow-hidden md:h-[20rem] md:mt-14"
   style="clip-path: ellipse(85% 50% at 50% 30%);">
 
   <div class="relative w-full h-screen bg-dark-teal">
 
     <div class="flex flex-col h-auto ">
-      <p class="text-white  z-[1000]">تجربه غذایی لذیذ و به یاد ماندنی</p>
-      <div class="mt-5  z-[1000]">
-        <button class="bg-light-green py-2 text-xs rounded-lg px-4  flex-shrink-0 text-dark-teal">اطلاعات
+      <p class="text-white z-[1000] order-1 lg:order-2 md:text-xl md:mt-2">تجربه غذایی لذیذ و به یاد ماندنی</p>
+      <div class="mt-5  z-[1000] order-2 lg:order-3">
+        <p class="hidden lg:w-[33%] lg:block">
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون
+          بلکهلورم
+          ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+        </p>
+        <button
+          class="bg-light-green py-2 text-xs rounded-lg px-4 md:px-6 md:font-extrabold md:text-sm flex-shrink-0 text-dark-teal">اطلاعات
           رستوران</button>
       </div>
       <!-- restaurant state -->
-      <div class="flex gap-2 mt-4 z-[2000]">
+      <div class="flex gap-2 mt-4 z-[2000] order-3 lg:order-1 lg:mt-1 lg:mb-4">
         <div class="flex justify-center items-center  ">
           <i class="pi pi-circle-fill text-account-color" style="font-size: 0.25rem;"></i>
         </div>
-        <span class="text-gray-400 text-xxs font-normal">در حال حاضر بسته ایم</span>
+        <span class="text-gray-400 text-xxs font-normal md:text-xs">در حال حاضر بسته ایم</span>
       </div>
     </div>
 
@@ -26,7 +32,7 @@
       style="background-image: url('/images/plant-left.svg'); ">
     </div>
     <!-- Pizza -->
-    <div class="absolute w-[70%] left-[-3%] top-[10%] h-1/2 bg-contain bg-no-repeat"
+    <div class="absolute w-[70%] md:w-[55%] left-[-3%] top-[10%] md:top-[2%] h-1/2 bg-contain bg-no-repeat"
       style="background-image: url('/images/pizza.webp'); ">
     </div>
   </div>
