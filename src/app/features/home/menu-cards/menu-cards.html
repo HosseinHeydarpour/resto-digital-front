@@ -1,1 +1,9 @@
-<p>menu-cards works!</p>
+<div class="px-2 mx-2 rounded-xl md:mx-4 lg:px-8 xl:mx-16  ">
+  <p-scrollpanel [style]="{height: '100%' }">
+    <div class="flex flex-row overflow-x-auto whitespace-nowrap gap-4 ">
+      @for (item of list; track $index) {
+      <app-card [item]="item" />
+      }
+    </div>
+  </p-scrollpanel>
+</div>
