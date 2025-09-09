@@ -1,0 +1,52 @@
+{
+  "food-list": [
+    {
+      "name": "ساندویچ",
+      "imageUrl": "images/sandwich.png"
+    },
+    {
+      "name": "قهوه",
+      "imageUrl": "images/coffee.png"
+    },
+    {
+      "name": "پیتزا",
+      "imageUrl": "images/pizza.png"
+    },
+    {
+      "name": "سیب زمینی",
+      "imageUrl": "images/crisp.png"
+    },
+    {
+      "name": "مرغ",
+      "imageUrl": "images/chicken.png"
+    },
+    {
+      "name": "بستنی",
+      "imageUrl": "images/icecream.png"
+    },
+    {
+      "name": "صبحانه",
+      "imageUrl": "images/breakfast.png"
+    },
+    {
+      "name": "دریایی",
+      "imageUrl": "images/sea-food.png"
+    },
+    {
+      "name": "کباب",
+      "imageUrl": "images/kebeb.png"
+    },
+    {
+      "name": "پیش غذا",
+      "imageUrl": "images/dessert.png"
+    },
+    {
+      "name": "ایرانی",
+      "imageUrl": "images/iranian-food.png"
+    },
+    {
+      "name": "نوشابه",
+      "imageUrl": "images/soda.png"
+    }
+  ]
+}
