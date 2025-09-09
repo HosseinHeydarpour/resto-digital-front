@@ -23,7 +23,7 @@ export interface Menu {
   categories: Category[];
 }
 
-export interface Restaurant {
+export interface IRestaurant {
   _id?: string; // MongoDB ID
   name: string;
   mobileNumber: string;
@@ -34,7 +34,7 @@ export interface Restaurant {
   isActive?: boolean;
   socialMedia?: string[];
   workingHours?: string;
-  menus?: Menu[]; // Define Menu interface separately
+  menus?: Menu[];
   createdAt?: string; // from timestamps
   updatedAt?: string; // from timestamps
 }
