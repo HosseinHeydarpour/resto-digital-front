@@ -1,9 +1,8 @@
 import { Component } from "@angular/core";
-import { ScrollPanelModule } from "primeng/scrollpanel";
 
 @Component({
   selector: "app-card",
-  imports: [ScrollPanelModule],
+  imports: [],
   templateUrl: "./card.html",
   styleUrl: "./card.scss",
 })
