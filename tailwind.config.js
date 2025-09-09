@@ -9,6 +9,7 @@ module.exports = {
         "normal-gray": "hsl(182, 14%, 38%)",
         "light-gray": "hsl(0, 0%, 96%)",
         "account-color": "#ffa600",
+        "main-background": "hsl(0, 0%, 96%)",
       },
       fontSize: {
         xxs: "0.625rem", // use text-xxs
