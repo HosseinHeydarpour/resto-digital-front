@@ -1,20 +1,5 @@
-<p-scrollpanel [style]="{ width: '100%', height: '200px' }">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-  </p>
-  <p>
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
-  </p>
-  <p>
-    At vero eos et accusamus et iusto odio dignissimos...
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-  </p>
-  <p>
-    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
-  </p>
-  <p>
-    At vero eos et accusamus et iusto odio dignissimos...
-  </p>
-</p-scrollpanel>
+<div
+  class="card border  shadow py-2 px-4 bg-white w-[100px] rounded-xl flex justify-center items-center flex-col cursor-pointer">
+  <img [src]="itemSignal().imageUrl" alt="{{ itemSignal().name }}" class="w-[50px] h-[50px] object-contain rounded">
+  <h3 class="text-lg font-bold mt-2">{{ itemSignal().name }}</h3>
+</div>
