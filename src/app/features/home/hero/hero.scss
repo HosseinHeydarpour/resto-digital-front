@@ -1,14 +1,15 @@
 /* Mobile-first: default for smallest screens (e.g., 375px and below) */
 .hero-image_pizza {
   left: -3%;
-  top: 12%;
+  top: 35%;
+  // bottom: 0;
 }
 
 /* Screens larger than 375px */
 @media (min-width: 375px) {
   .hero-image_pizza {
     left: -5%;
-    top: 7%;
+    top: 22%;
   }
 }
 
@@ -16,6 +17,7 @@
 @media (min-width: 425px) {
   .hero-image_pizza {
     left: -4%;
-    top: 5%;
+    top: 15%;
+    bottom: 0;
   }
 }
