@@ -16,9 +16,20 @@
     <p-divider align="center" type="dotted">
     </p-divider>
     <ng-template #footer>
-      <div class="flex gap-4 mt-1">
-        <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
-        <p-button label="Save" class="w-full" styleClass="w-full" />
+      <div class="flex justify-between mt-1">
+        <div class="flex items-center">
+          <p-button icon="pi pi-plus" severity="secondary" class="" [outlined]="true" styleClass="" />
+          <span class="flex justify-center items-center px-2">{{0}}</span>
+          <p-button icon="pi pi-minus" severity="secondary" class="" [outlined]="true" styleClass="" />
+        </div>
+
+        <div class="flex flex-col ">
+          <div class="flex flex-row gap-2 items-center">
+            <span class="line-through text-gray-400 font-light text-sm">{{180000|number :'3.0-0'}}</span>
+            <span class="bg-account-color p-1 text-white rounded-lg font-light">{{2}}%</span>
+          </div>
+          <span class="font-light">{{176000 | number :'3.0-0'}}تومان </span>
+        </div>
       </div>
     </ng-template>
   </p-card>
