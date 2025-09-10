@@ -25,11 +25,11 @@ export interface Menu {
 
 export interface IRestaurant {
   _id?: string; // MongoDB ID
-  name: string;
-  mobileNumber: string;
+  name?: string;
+  mobileNumber?: string;
   landLine?: string[];
   address?: Address;
-  owner: string; // User ID
+  owner?: string; // User ID
   staff?: string[]; // Array of User IDs
   isActive?: boolean;
   socialMedia?: string[];
