@@ -6,11 +6,21 @@
       }
     </div>
   </p-scrollpanel>
+
+  <!-- why this part not shown -->
+  <p-divider align="center" type="dotted">
+    <b class="md:text-2xl text-gray-700">{{'ساندویچ'}}</b>
+  </p-divider>
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+    <div class="col-span-1">
+      <app-sub-menu-card />
+    </div>
+    <div class="col-span-1">
+      <app-sub-menu-card />
+    </div>
+    <div class="col-span-1">
+      <app-sub-menu-card />
+    </div>
+
+  </div>
 </div>
-<!-- why this part not shown -->
-<div class="flex items-center my-4 text-gray-500 border ">
-  <div class="flex-grow border-t border-gray-300 border-dashed"></div> <!-- left dashed line -->
-  <span class="mx-4">OR</span> <!-- text -->
-  <div class="flex-grow border-t border-gray-300 border-dashed"></div> <!-- right dashed line -->
-</div>
-<app-sub-menu-card />
