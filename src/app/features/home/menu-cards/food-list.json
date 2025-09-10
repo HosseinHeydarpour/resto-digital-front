@@ -1,50 +1,210 @@
 [
   {
     "name": "ساندویچ",
-    "imageUrl": "images/sandwich.png"
+    "imageUrl": "images/sandwich.png",
+    "submenu": [
+      {
+        "title": "ساندویچ ویژه گوشت",
+        "imageUrl": "images/burger1.png",
+        "description": "ساندویچ با گوشت تازه و سس مخصوص",
+        "price": 50000,
+        "discount": 10,
+        "stock": 15
+      },
+      {
+        "title": "ساندویچ مرغ",
+        "imageUrl": "images/burger2.png",
+        "description": "ساندویچ با مرغ کبابی و سبزیجات تازه",
+        "price": 48000,
+        "discount": 5,
+        "stock": 20
+      },
+      {
+        "title": "ساندویچ پنیر و سبزیجات",
+        "imageUrl": "images/burger3.png",
+        "description": "ساندویچ گیاهی با پنیر و سبزیجات تازه",
+        "price": 45000,
+        "discount": 0,
+        "stock": 12
+      },
+      {
+        "title": "ساندویچ ژامبون",
+        "imageUrl": "images/burger4.png",
+        "description": "ساندویچ با ژامبون و سس مخصوص",
+        "price": 47000,
+        "discount": 5,
+        "stock": 18
+      },
+      {
+        "title": "ساندویچ مرغ و قارچ",
+        "imageUrl": "images/burger5.png",
+        "description": "ساندویچ با مرغ، قارچ و پنیر",
+        "price": 52000,
+        "discount": 10,
+        "stock": 10
+      },
+      {
+        "title": "ساندویچ تند و گوشت",
+        "imageUrl": "images/burger1.png",
+        "description": "ساندویچ با گوشت، فلفل تند و سس مخصوص",
+        "price": 55000,
+        "discount": 15,
+        "stock": 8
+      }
+    ]
   },
   {
     "name": "قهوه",
-    "imageUrl": "images/coffee.png"
+    "imageUrl": "images/coffee.png",
+    "submenu": [
+      {
+        "title": "قهوه لاته",
+        "imageUrl": "images/coffee-item.png",
+        "description": "قهوه تازه با شیر بخار داده شده",
+        "price": 40000,
+        "discount": 0,
+        "stock": 20
+      }
+    ]
   },
   {
     "name": "پیتزا",
-    "imageUrl": "images/pizza.png"
+    "imageUrl": "images/pizza.png",
+    "submenu": [
+      {
+        "title": "پیتزا مخصوص",
+        "imageUrl": "images/pizza-item.png",
+        "description": "پیتزا با مواد تازه و پنیر پیتزا",
+        "price": 120000,
+        "discount": 15,
+        "stock": 10
+      }
+    ]
   },
   {
     "name": "سیب زمینی",
-    "imageUrl": "images/crisp.png"
+    "imageUrl": "images/crisp.png",
+    "submenu": [
+      {
+        "title": "سیب زمینی سرخ کرده",
+        "imageUrl": "images/crisp-item.png",
+        "description": "سیب زمینی تازه و طلایی",
+        "price": 25000,
+        "discount": 5,
+        "stock": 30
+      }
+    ]
   },
   {
     "name": "مرغ",
-    "imageUrl": "images/chicken.png"
+    "imageUrl": "images/chicken.png",
+    "submenu": [
+      {
+        "title": "مرغ سوخاری",
+        "imageUrl": "images/chicken-item.png",
+        "description": "مرغ تازه و خوشمزه",
+        "price": 80000,
+        "discount": 10,
+        "stock": 12
+      }
+    ]
   },
   {
     "name": "بستنی",
-    "imageUrl": "images/icecream.png"
+    "imageUrl": "images/icecream.png",
+    "submenu": [
+      {
+        "title": "بستنی شکلاتی",
+        "imageUrl": "images/icecream-item.png",
+        "description": "بستنی خوشمزه با طعم شکلات",
+        "price": 30000,
+        "discount": 0,
+        "stock": 25
+      }
+    ]
   },
   {
     "name": "صبحانه",
-    "imageUrl": "images/breakfast.png"
+    "imageUrl": "images/breakfast.png",
+    "submenu": [
+      {
+        "title": "صبحانه ویژه",
+        "imageUrl": "images/breakfast-item.png",
+        "description": "صبحانه کامل با نان تازه و تخم مرغ",
+        "price": 45000,
+        "discount": 5,
+        "stock": 18
+      }
+    ]
   },
   {
     "name": "دریایی",
-    "imageUrl": "images/sea-food.png"
+    "imageUrl": "images/sea-food.png",
+    "submenu": [
+      {
+        "title": "میگو سرخ شده",
+        "imageUrl": "images/seafood-item.png",
+        "description": "میگوی تازه و خوشمزه",
+        "price": 90000,
+        "discount": 10,
+        "stock": 14
+      }
+    ]
   },
   {
     "name": "کباب",
-    "imageUrl": "images/kebeb.png"
+    "imageUrl": "images/kebeb.png",
+    "submenu": [
+      {
+        "title": "کباب کوبیده",
+        "imageUrl": "images/kebab-item.png",
+        "description": "کباب کوبیده با گوشت تازه",
+        "price": 70000,
+        "discount": 5,
+        "stock": 20
+      }
+    ]
   },
   {
     "name": "پیش غذا",
-    "imageUrl": "images/dessert.png"
+    "imageUrl": "images/dessert.png",
+    "submenu": [
+      {
+        "title": "سالاد فصل",
+        "imageUrl": "images/dessert-item.png",
+        "description": "سالاد تازه با سبزیجات",
+        "price": 35000,
+        "discount": 0,
+        "stock": 22
+      }
+    ]
   },
   {
     "name": "ایرانی",
-    "imageUrl": "images/iranian-food.png"
+    "imageUrl": "images/iranian-food.png",
+    "submenu": [
+      {
+        "title": "چلو کباب",
+        "imageUrl": "images/iranian-item.png",
+        "description": "چلو کباب سنتی با برنج ایرانی",
+        "price": 85000,
+        "discount": 10,
+        "stock": 16
+      }
+    ]
   },
   {
     "name": "نوشابه",
-    "imageUrl": "images/soda.png"
+    "imageUrl": "images/soda.png",
+    "submenu": [
+      {
+        "title": "نوشابه قوطی",
+        "imageUrl": "images/soda-item.png",
+        "description": "نوشابه تازه و خنک",
+        "price": 15000,
+        "discount": 0,
+        "stock": 50
+      }
+    ]
   }
 ]
