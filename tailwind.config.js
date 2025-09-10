@@ -14,6 +14,9 @@ module.exports = {
       fontSize: {
         xxs: "0.625rem", // use text-xxs
       },
+      fontWeight: {
+        550: "550",
+      },
     },
   },
   plugins: [],
