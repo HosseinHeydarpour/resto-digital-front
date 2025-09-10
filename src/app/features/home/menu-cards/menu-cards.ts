@@ -1,12 +1,13 @@
 import { Component } from "@angular/core";
 import { ScrollPanelModule } from "primeng/scrollpanel";
 import { Card } from "../../../shared/components/card/card";
+import { SubMenuCard } from "../../../shared/components/sub-menu-card/sub-menu-card";
 import { IFoodItem } from "../../../shared/models/IFoodList";
 import foodList from "./food-list.json";
 
 @Component({
   selector: "app-menu-cards",
-  imports: [Card, ScrollPanelModule],
+  imports: [Card, ScrollPanelModule, SubMenuCard],
   templateUrl: "./menu-cards.html",
   styleUrl: "./menu-cards.scss",
 })
