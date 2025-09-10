@@ -1,5 +1,6 @@
-<div
-  class="card border  shadow py-2 px-4 bg-white w-[100px] rounded-xl flex justify-center items-center flex-col cursor-pointer">
-  <img [src]="itemSignal().imageUrl" alt="{{ itemSignal().name }}" class="w-[50px] h-[50px] object-contain rounded">
-  <h3 class="text-lg font-bold mt-2">{{ itemSignal().name }}</h3>
+<div (click)="cardSelected()"
+  [ngClass]="selected ? 'bg-green-500 text-white  outline-dashed outline-2 outline-dark-teal outline-offset-[-6px]' : 'bg-white'"
+  class="card border  shadow py-2 w-[100px] rounded-xl flex justify-center items-center flex-col cursor-pointer">
+  <img [src]="item.imageUrl" alt="{{ item.name }}" class="w-[40px] h-[60px] object-contain rounded">
+  <h3 class="text-lg font-bold mt-2">{{ item.name }}</h3>
 </div>

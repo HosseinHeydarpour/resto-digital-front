@@ -2,7 +2,8 @@
   <p-scrollpanel [style]="{height: '100%' }">
     <div class="flex flex-row overflow-x-auto whitespace-nowrap gap-4 ">
       @for (item of list; track $index) {
-      <app-card [item]="item" />
+      <app-card [item]="item" [selected]="selectedIndex === $index " (selectedCard)="selectCard($index)" />
+
       }
     </div>
   </p-scrollpanel>

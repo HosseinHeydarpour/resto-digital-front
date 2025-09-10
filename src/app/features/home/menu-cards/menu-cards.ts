@@ -1,7 +1,7 @@
-import { Card } from "../../../shared/components/card/card";
 import { Component } from "@angular/core";
-import { IFoodItem } from "../../../shared/models/IFoodList";
 import { ScrollPanelModule } from "primeng/scrollpanel";
+import { Card } from "../../../shared/components/card/card";
+import { IFoodItem } from "../../../shared/models/IFoodList";
 import foodList from "./food-list.json";
 
 @Component({
@@ -12,4 +12,9 @@ import foodList from "./food-list.json";
 })
 export class MenuCards {
   list: IFoodItem[] = foodList;
+  selectedIndex: number = 0;
+
+  selectCard(id: number) {
+    this.selectedIndex = id;
+  }
 }

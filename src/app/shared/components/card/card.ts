@@ -1,22 +1,20 @@
-import { Component, Input, Signal, signal } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+
+import { CommonModule } from "@angular/common";
+import { IFoodItem } from "../../models/IFoodList";
 
 @Component({
   selector: "app-card",
-  imports: [],
+  imports: [CommonModule],
   templateUrl: "./card.html",
   styleUrl: "./card.scss",
 })
 export class Card {
-  @Input() set item(value: { name: string; imageUrl: string }) {
-    this._item.set(value);
+  @Input() item!: IFoodItem;
+  @Input() selected: boolean = false;
+  @Output() selectedCard = new EventEmitter();
+
+  cardSelected() {
+    this.selectedCard.emit(this.item.name);
   }
-
-  // Internal signal
-  readonly _item = signal<{ name: string; imageUrl: string }>({
-    name: "",
-    imageUrl: "",
-  });
-
-  // You can expose it as a readonly signal for the template
-  readonly itemSignal: Signal<{ name: string; imageUrl: string }> = this._item;
 }
