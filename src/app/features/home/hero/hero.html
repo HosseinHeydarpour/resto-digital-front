@@ -26,9 +26,19 @@
       <!-- restaurant state -->
       <div class="flex gap-2 mt-4 z-[2000] order-3 lg:order-1 lg:mt-1 lg:mb-4">
         <div class="flex justify-center items-center  ">
-          <i class="pi pi-circle-fill text-account-color" style="font-size: 0.25rem;"></i>
+
+          <i class="pi pi-circle-fill"
+            [ngClass]="resInfo.data.restaurant.isActive ? 'text-green-300':'text-account-color'"
+            style="font-size: 0.25rem;"></i>
         </div>
-        <span class="text-gray-400 text-xxs font-normal md:text-xs xl:text-sm">در حال حاضر بسته ایم</span>
+        <span class="text-gray-400 text-xxs font-normal md:text-xs xl:text-sm" style="word-spacing: 5px;">
+
+          @if (resInfo.data.restaurant.isActive) {
+          رستوران باز است
+          }@else {
+          در حال حاضر بسته ایم
+          }
+        </span>
       </div>
     </div>
 

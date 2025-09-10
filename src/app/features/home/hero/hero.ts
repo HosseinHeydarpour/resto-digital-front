@@ -21,6 +21,7 @@ export class Hero {
   ngOnInit(): void {
     this.restaurantInfo.getAllRestaurantInfo().subscribe({
       next: (data) => {
+        this.resInfo = data;
         console.log(data);
       },
       error: (err) => {
