@@ -1,34 +1,32 @@
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { Component, inject } from "@angular/core";
 
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import { IRestaurant } from "../../../shared/models/IRestaurantInfo";
+import { HttpClientModule } from "@angular/common/http";
+import { RestrantInfo } from "../../../core/services/restrant-info";
 
 @Component({
   selector: "app-hero",
   standalone: true,
-  imports: [HttpClientModule, CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: "./hero.html",
   styleUrl: "./hero.scss",
 })
 export class Hero {
-  restaurants!: IRestaurant;
+  resInfo: any = [];
   loading = true;
 
-  constructor(private http: HttpClient) {}
+  private restaurantInfo = inject(RestrantInfo);
+
+  constructor() {}
   ngOnInit(): void {
-    this.http
-      .get(
-        "https://resto-digital.onrender.com/api/v1/restaurants/60d5ec49f72e9a3d8c8a8a8a"
-      )
-      .subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-        error: (err) => {
-          console.error("Error fetching restaurants:", err);
-          this.loading = false;
-        },
-      });
+    this.restaurantInfo.getAllRestaurantInfo().subscribe({
+      next: (data) => {
+        console.log(data);
+      },
+      error: (err) => {
+        console.error("Error fetching restaurant info:", err);
+        this.loading = false;
+      },
+    });
   }
 }
