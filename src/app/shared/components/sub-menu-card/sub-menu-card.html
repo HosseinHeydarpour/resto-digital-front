@@ -18,11 +18,14 @@
     <ng-template #footer>
       <div class="flex justify-between mt-1">
         <div class="flex items-center">
-          <p-button (click)="increment()" icon="pi pi-plus" severity="secondary" class="" [outlined]="true"
-            styleClass="" />
+          <p-button (click)="increment()" icon="pi pi-plus" severity="secondary" class="rounded-md" [outlined]="true"
+            [ngClass]="quantity() >0 ?'':'bg-gray-200 opacity-70'" />
+
+          @if (quantity()>0) {
           <span class="flex justify-center items-center px-2">{{quantity()}}</span>
           <p-button (click)="decrement()" icon="pi pi-minus" severity="secondary" class="" [outlined]="true"
             styleClass="" />
+          }
         </div>
 
         <div class="flex flex-col ">

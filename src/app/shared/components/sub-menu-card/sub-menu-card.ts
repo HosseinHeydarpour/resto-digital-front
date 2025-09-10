@@ -1,13 +1,13 @@
 import { Component, signal } from "@angular/core";
 
-import { DecimalPipe } from "@angular/common";
+import { CommonModule, DecimalPipe } from "@angular/common";
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
 import { DividerModule } from "primeng/divider";
 
 @Component({
   selector: "app-sub-menu-card",
-  imports: [CardModule, ButtonModule, DividerModule, DecimalPipe],
+  imports: [CardModule, ButtonModule, DividerModule, DecimalPipe, CommonModule],
   templateUrl: "./sub-menu-card.html",
   styleUrl: "./sub-menu-card.scss",
 })
