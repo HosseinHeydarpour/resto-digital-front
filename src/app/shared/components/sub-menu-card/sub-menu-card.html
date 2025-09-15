@@ -1,10 +1,10 @@
 <div class="mb-4  flex flex-row ">
-  <p-card [style]="{  overflow: 'hidden' }">
+  <p-card [style]="{  overflow: 'hidden', 'background-color': 'white'  }">
 
-    <div class="flex">
+    <div class="flex ">
       <img alt="Card" class="w-[120px] h-[120px]" src="images/burger1.png" />
       <div class="flex flex-col justify-center mr-2 gap-y-2">
-        <h5 class="font-extrabold text-lg">{{'برگر گوشت و قارچ '}}</h5>
+        <h5 class="font-extrabold text-lg dark:text-black">{{'برگر گوشت و قارچ '}}</h5>
         <p class="font-550 text-[16px]  line-clamp-2 text-gray-600 leading-8 text-justify" style="line-height: 32px;">
           {{'این برگر از گوشت گاو تازه و قارچ‌های تازه و خوشمزه تهیه شده است. هر برگر از این محصول حاوی حدود ۳۷۰
           کیلوکالری
@@ -18,11 +18,11 @@
     <ng-template #footer>
       <div class="flex justify-between mt-1">
         <div class="flex items-center">
-          <p-button (click)="increment()" icon="pi pi-plus" severity="secondary" class="rounded-md" [outlined]="true"
-            [ngClass]="quantity() >0 ?'':'bg-gray-200 opacity-70'" />
+          <p-button (click)="increment()" icon="pi pi-plus" severity="secondary" [outlined]="true"
+            [ngClass]="quantity() >0 ?'':'bg-gray-200 opacity-70 '" />
 
           @if (quantity()>0) {
-          <span class="flex justify-center items-center px-2">{{quantity()}}</span>
+          <span class="flex justify-center items-center px-2 dark:text-black font-550">{{quantity()}}</span>
           <p-button (click)="decrement()" icon="pi pi-minus" severity="secondary" class="" [outlined]="true"
             styleClass="" />
           }
@@ -33,7 +33,7 @@
             <span class="line-through text-gray-400 font-light text-sm">{{180000|number :'3.0-0'}}</span>
             <span class="bg-account-color p-1 text-white rounded-lg font-light">{{2}}%</span>
           </div>
-          <span class="font-light">{{176000 | number :'3.0-0'}}تومان </span>
+          <span class="font-light dark:text-black">{{176000 | number :'3.0-0'}}تومان </span>
         </div>
       </div>
     </ng-template>
