@@ -1,6 +1,6 @@
 <div class="px-2 mx-2 rounded-xl md:mx-4 lg:px-8 xl:mx-16 ">
 
-  <div class="custom-scroll flex flex-row overflow-x-auto whitespace-nowrap gap-4 pb-4 md:pb-8">
+  <div class="custom-scroll flex flex-row overflow-x-auto whitespace-nowrap gap-4 pb-4 md:pb-8 mb-10">
     @for (item of list; track $index) {
     <app-card [item]="item" [selected]="selectedIndex === $index" (selectedCard)="selectCard($index)" />
     }
