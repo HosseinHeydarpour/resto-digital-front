@@ -1,11 +1,10 @@
-<div class="px-2 mx-2 rounded-xl md:mx-4 lg:px-8 xl:mx-16  ">
-  <p-scrollpanel [style]="{height: '100%' }">
-    <div class="flex flex-row overflow-x-auto whitespace-nowrap gap-4 pb-4 md:pb-8">
-      @for (item of list; track $index) {
-      <app-card [item]="item" [selected]="selectedIndex === $index " (selectedCard)="selectCard($index)" />
-      }
-    </div>
-  </p-scrollpanel>
+<div class="px-2 mx-2 rounded-xl md:mx-4 lg:px-8 xl:mx-16 ">
+
+  <div class="custom-scroll flex flex-row overflow-x-auto whitespace-nowrap gap-4 pb-4 md:pb-8">
+    @for (item of list; track $index) {
+    <app-card [item]="item" [selected]="selectedIndex === $index" (selectedCard)="selectCard($index)" />
+    }
+  </div>
 
   <!-- why this part not shown -->
   <p-divider align="center" type="dotted">

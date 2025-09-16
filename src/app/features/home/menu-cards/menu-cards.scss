@@ -7,3 +7,28 @@
   background-color: theme("colors.main-background");
   font-weight: bold !important;
 }
+
+.custom-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: theme("colors.light-green") #e5e7eb; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.custom-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: theme("colors.light-green");
+  border-radius: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.dark-teal");
+}
