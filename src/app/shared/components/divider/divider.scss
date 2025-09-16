@@ -1,0 +1,9 @@
+.p-divider.p-divider-horizontal:before {
+  border-top: 2px dashed theme("colors.gray.500");
+}
+
+:host ::ng-deep .p-divider-horizontal .p-divider-content {
+  padding: 0 20px 0;
+  background-color: theme("colors.main-background");
+  font-weight: bold !important;
+}
