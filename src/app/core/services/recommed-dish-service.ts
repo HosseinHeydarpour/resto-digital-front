@@ -9,4 +9,9 @@ import { Recommended } from "../dev-data/mock-recommended-dish";
 export class RecommendedDishService {
   // Mock data coming from dev-data folder
   private recDishData = signal<IRecommendedDish[]>(Recommended);
+
+  // Read OP
+  getRecDishes() {
+    return this.recDishData();
+  }
 }
