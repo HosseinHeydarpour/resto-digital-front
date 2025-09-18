@@ -1,10 +1,12 @@
 import { Injectable, signal } from "@angular/core";
 
 import { IRecommendedDish } from "../../shared/models/IRecommendedFood";
+import { Recommended } from "../dev-data/mock-recommended-dish";
 
 @Injectable({
   providedIn: "root",
 })
 export class RecommendedDishService {
-  private signalRecDish = signal<IRecommendedDish | null>(null);
+  // Mock data coming from dev-data folder
+  private recDishData = signal<IRecommendedDish[]>(Recommended);
 }
