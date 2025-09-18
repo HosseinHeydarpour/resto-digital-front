@@ -5,7 +5,7 @@ import { CarouselModule } from "primeng/carousel";
 import { CommonModule } from "@angular/common";
 import { Divider } from "../../../shared/components/divider/divider";
 import { IRecommendedDish } from "../../../shared/models/IRecommendedFood";
-import { RecommendedDishService } from "../../../core/services/recommed-dish-service";
+import { RecommendedDishService } from "../../../core/services/recommended-dish-service";
 import { SeeAllButton } from "../../../shared/components/see-all-button/see-all-button";
 import { TagModule } from "primeng/tag";
 
