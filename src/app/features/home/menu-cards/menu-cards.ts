@@ -4,12 +4,13 @@ import { Card } from "../../../shared/components/card/card";
 import { Divider } from "../../../shared/components/divider/divider";
 import { IFoodItem } from "../../../shared/models/IFoodList";
 import { ScrollPanelModule } from "primeng/scrollpanel";
+import { SeeAllButton } from "../../../shared/components/see-all-button/see-all-button";
 import { SubMenuCard } from "../../../shared/components/sub-menu-card/sub-menu-card";
 import foodList from "./food-list.json";
 
 @Component({
   selector: "app-menu-cards",
-  imports: [Card, ScrollPanelModule, SubMenuCard, Divider],
+  imports: [Card, ScrollPanelModule, SubMenuCard, Divider, SeeAllButton],
   templateUrl: "./menu-cards.html",
   styleUrl: "./menu-cards.scss",
 })
