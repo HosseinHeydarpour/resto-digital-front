@@ -3,44 +3,50 @@ import { IRecommendedDish } from "../../shared/models/IRecommendedFood";
 export const Recommended: IRecommendedDish[] = [
   {
     id: "f1",
-    name: "Margherita Pizza",
-    description: "Classic Italian pizza with fresh mozzarella and basil.",
-    price: 12.99,
+    name: "مرغ سوخاری",
+    description:
+      "این محصول از مرغ تازه و کیفیتی برتر تهیه شده است و پس از سوختن در روغن گرم، پوست آن به‌صورت طلاییو خوشمزه شده است. هر بخش از این مرغ سوخاری حاوی حدود ۲۵۰ کیلوکالری است",
+    price: 235000,
     image: "images/recommended/big-chicken.png",
   },
   {
     id: "f2",
-    name: "Sushi Platter",
-    description: "Assorted fresh sushi with wasabi and soy sauce.",
-    price: 18.5,
+    name: "مرغ تک نفره ",
+    description:
+      "این محصول از مرغ تازه و کیفیتی برتر تهیه شده است و پس از سوختن در روغن گرم، پوست آن به‌صورت طلاییو خوشمزه شده است. هر بخش از این مرغ سوخاری حاوی حدود ۲۵۰ کیلوکالری است",
+    price: 142000,
     image: "images/recommended/chicken.png",
   },
   {
     id: "f3",
-    name: "Caesar Salad",
-    description: "Crisp romaine lettuce with Caesar dressing and croutons.",
-    price: 8.75,
+    name: "مرغ شکم پر",
+    description:
+      "این محصول از مرغ تازه و کیفیتی برتر تهیه شده است و پس از سوختن در روغن گرم، پوست آن به‌صورت طلاییو خوشمزه شده است. هر بخش از این مرغ سوخاری حاوی حدود ۲۵۰ کیلوکالری است",
+    price: 175000,
     image: "images/recommended/dry-chicken.png",
   },
   {
     id: "f4",
-    name: "Cheeseburger",
-    description: "Juicy beef patty with cheese, lettuce, and tomato.",
-    price: 10.0,
+    name: "زرشک پلو",
+    description:
+      "این محصول از مرغ تازه و کیفیتی برتر تهیه شده است و پس از سوختن در روغن گرم، پوست آن به‌صورت طلاییو خوشمزه شده است. هر بخش از این مرغ سوخاری حاوی حدود ۲۵۰ کیلوکالری است",
+    price: 750000,
     image: "images/recommended/kebeb.png",
   },
   {
     id: "f5",
-    name: "Pasta Alfredo",
-    description: "Creamy Alfredo pasta with parmesan cheese and parsley.",
-    price: 11.5,
+    name: "شامی",
+    description:
+      "این محصول از مرغ تازه و کیفیتی برتر تهیه شده است و پس از سوختن در روغن گرم، پوست آن به‌صورت طلاییو خوشمزه شده است. هر بخش از این مرغ سوخاری حاوی حدود ۲۵۰ کیلوکالری است",
+    price: 150000,
     image: "images/recommended/shami.png",
   },
   {
     id: "f6",
-    name: "Grilled Salmon",
-    description: "Tender grilled salmon with lemon butter sauce.",
-    price: 19.99,
+    name: "کتلت",
+    description:
+      "این محصول از مرغ تازه و کیفیتی برتر تهیه شده است و پس از سوختن در روغن گرم، پوست آن به‌صورت طلاییو خوشمزه شده است. هر بخش از این مرغ سوخاری حاوی حدود ۲۵۰ کیلوکالری است",
+    price: 65000,
     image: "images/recommended/shami2.png",
   },
 ];
