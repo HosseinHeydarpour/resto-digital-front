@@ -1,36 +1,40 @@
-<div class="px-2 mx-2 rounded-xl md:mx-4 lg:px-8 xl:mx-16 ">
-  <app-divider [title]="recommendedTitle" />
+<div class=" rounded-xl md:mx-4 lg:px-8 xl:mx-16 ">
+  <div class="px-2 mx-2 md:mx-0 lg:px-0">
+    <app-divider [title]="recommendedTitle" />
+  </div>
 
+  <p-carousel [value]="recommendedDish" [numVisible]="4" [numScroll]="1" [circular]="true"
+    [responsiveOptions]="responsiveOptions">
+    <ng-template let-dish pTemplate="item">
 
-  <p-carousel [value]="cars" [numVisible]="4" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions">
-    <ng-template let-car pTemplate="item">
+      <div class="grid grid-cols-1 bg-white rounded-2xl shadow-md md:mx-4 my-[15px] pt-[41px] pb-[22px] px-[26px]">
+        <div class="recommended-image  ">
+          <div class="flex justify-center mb-[18px]">
+            <img [src]="dish.image" [alt]="dish.name" class="w-[120px] h-[120px]">
+          </div>
+          <h3 class="flex justify-center text-gray-700 font-550 dark:text-gray-700 mb-3">{{ dish.name }}</h3>
 
-      <div class="product-item ">
-        <div class="product-item-content">
-          <div class="p-mb-3"></div>
-          <div>
-            <h4 class="p-mb-1 dark:text-black">
-              {{ car.id }}
-            </h4>
-            <h4 class="p-mb-1 dark:text-black">
-              {{ car.name }}
-            </h4>
-            <h4 class="p-mb-1">
-              {{ car.description }}
-            </h4>
-            <h6 class="p-mt-0 p-mb-3 dark:text-black">
-              ${{ car.price }}
-            </h6>
-            <div class="car-buttons p-mt-3 border-solid border">
-
-              <p-button type="button" class="w-full">
-                افزودن به سبد خرید
-              </p-button>
-            </div>
+          <p class=" text-gray-400 font-thin text-sm text-justify leading-7 line-clamp-2">{{
+            dish.description }}
+          </p>
+          <div class="flex justify-center text-gray-700 my-4">
+            <span>
+              {{ dish.price | number}}
+            </span>
+            <span class="">تومان</span>
+          </div>
+          <div class="flex justify-center">
+            <button
+              class="cursor-pointer text-xs bg-dark-teal py-3 w-full text-white rounded-md lg:bg-gray-200 lg:text-gray-400 lg:text-base lg:hover:bg-dark-teal lg:hover:text-white ">افزودن
+              به سبد
+              خرید</button>
           </div>
         </div>
+
       </div>
 
     </ng-template>
   </p-carousel>
+
+  <app-see-all-button />
 </div>

@@ -6,11 +6,19 @@ import { CommonModule } from "@angular/common";
 import { Divider } from "../../../shared/components/divider/divider";
 import { IRecommendedDish } from "../../../shared/models/IRecommendedFood";
 import { RecommendedDishService } from "../../../core/services/recommed-dish-service";
+import { SeeAllButton } from "../../../shared/components/see-all-button/see-all-button";
 import { TagModule } from "primeng/tag";
 
 @Component({
   selector: "app-recommended-dish",
-  imports: [Divider, CarouselModule, ButtonModule, TagModule, CommonModule],
+  imports: [
+    Divider,
+    CarouselModule,
+    ButtonModule,
+    TagModule,
+    CommonModule,
+    SeeAllButton,
+  ],
   templateUrl: "./recommended-dish.html",
   styleUrl: "./recommended-dish.scss",
 })
@@ -23,7 +31,7 @@ export class RecommendedDish {
 
   constructor() {
     effect(() => {
-      this.recDishService.getRecDishes();
+      this.recommendedDish = this.recDishService.getRecDishes();
     });
   }
 
@@ -40,7 +48,7 @@ export class RecommendedDish {
         numScroll: 1,
       },
       {
-        breakpoint: "425px", // screen <= 768px
+        breakpoint: "500px", // screen <= 768px
         numVisible: 1,
         numScroll: 1,
       },
