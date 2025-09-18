@@ -1,3 +1,36 @@
 <div class="px-2 mx-2 rounded-xl md:mx-4 lg:px-8 xl:mx-16 ">
   <app-divider [title]="recommendedTitle" />
+
+
+  <p-carousel [value]="cars" [numVisible]="4" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions">
+    <ng-template let-car pTemplate="item">
+
+      <div class="product-item ">
+        <div class="product-item-content">
+          <div class="p-mb-3"></div>
+          <div>
+            <h4 class="p-mb-1 dark:text-black">
+              {{ car.id }}
+            </h4>
+            <h4 class="p-mb-1 dark:text-black">
+              {{ car.name }}
+            </h4>
+            <h4 class="p-mb-1">
+              {{ car.description }}
+            </h4>
+            <h6 class="p-mt-0 p-mb-3 dark:text-black">
+              ${{ car.price }}
+            </h6>
+            <div class="car-buttons p-mt-3 border-solid border">
+
+              <p-button type="button" class="w-full">
+                افزودن به سبد خرید
+              </p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+  </p-carousel>
 </div>
