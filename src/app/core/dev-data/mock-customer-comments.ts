@@ -6,30 +6,30 @@ export const COMMENTS: IComments[] = [
     name: "علی رضایی",
     contentText:
       "غذا خیلی خوشمزه بود و سرویس‌دهی عالی بود. حتما دوباره سفارش می‌دهم.",
-    image: "/assets/images/users/ali.jpg",
+    image: "images/comments/person5.jpg",
   },
   {
     id: 2,
     name: "مریم احمدی",
     contentText: "بسته‌بندی مرتب و ارسال سریع انجام شد. کیفیت غذا هم عالی بود.",
-    image: "/assets/images/users/maryam.jpg",
+    image: "images/comments/person4.jpg",
   },
   {
     id: 3,
     name: "حسین کریمی",
     contentText: "نسبت به قیمت کمی گران است اما طعم غذا ارزشش را دارد.",
-    image: "/assets/images/users/hossein.jpg",
+    image: "images/comments/person3.svg",
   },
   {
     id: 4,
     name: "زهرا محمدی",
     contentText: "برخورد پیک محترمانه بود و غذا داغ به دستم رسید.",
-    image: "/assets/images/users/zahra.jpg",
+    image: "images/comments/person2.svg",
   },
   {
     id: 5,
     name: "امیر حسنی",
     contentText: "همه چیز خوب بود اما زمان تحویل کمی طول کشید.",
-    image: "/assets/images/users/amir.jpg",
+    image: "images/comments/person1.svg",
   },
 ];
