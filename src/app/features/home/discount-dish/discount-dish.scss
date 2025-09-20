@@ -4,3 +4,18 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+/* Target carousel navigation buttons */
+
+:host ::ng-deep.p-carousel-prev-button,
+:host ::ng-deep.p-carousel-next-button {
+  background: white !important;
+  border-radius: 15%;
+  margin-top: 10%;
+}
+:host ::ng-deep.p-carousel-prev-button {
+  margin-left: 20px;
+}
+:host ::ng-deep.p-carousel-next-button {
+  margin-right: 20px;
+}
