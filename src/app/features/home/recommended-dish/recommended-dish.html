@@ -4,7 +4,7 @@
   </div>
 
   <p-carousel [value]="recommendedDish" [numVisible]="4" [numScroll]="1" [circular]="true"
-    [responsiveOptions]="responsiveOptions">
+    [responsiveOptions]="responsiveOptions" [autoplayInterval]="3000">
     <ng-template let-dish pTemplate="item">
 
       <div class="grid grid-cols-1 bg-white rounded-2xl shadow-md md:mx-4 my-[15px] pt-[41px] pb-[22px] px-[26px]">
