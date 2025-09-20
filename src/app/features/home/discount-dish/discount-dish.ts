@@ -1,6 +1,7 @@
 import { Component, effect, inject, signal } from "@angular/core";
 
 import { Carousel } from "primeng/carousel";
+import { CommonModule } from "@angular/common";
 import { Divider } from "../../../shared/components/divider/divider";
 import { IDisCountDish } from "../../../shared/models/IDisCountDish";
 import { SpecialDiscountService } from "../../../core/services/special-discount-service";
@@ -8,7 +9,7 @@ import { TagModule } from "primeng/tag";
 
 @Component({
   selector: "app-discount-dish",
-  imports: [Divider, Carousel, TagModule],
+  imports: [Divider, Carousel, TagModule, CommonModule],
   templateUrl: "./discount-dish.html",
   styleUrl: "./discount-dish.scss",
 })
