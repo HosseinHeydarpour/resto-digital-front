@@ -35,7 +35,7 @@ export class DiscountDish {
       {
         breakpoint: "768px", // screen <= 1024px
         numVisible: 3,
-        numScroll: 3,
+        numScroll: 1,
       },
       {
         breakpoint: "500px", // screen <= 768px
