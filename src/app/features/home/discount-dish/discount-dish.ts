@@ -22,7 +22,6 @@ export class DiscountDish {
   constructor() {
     effect(() => {
       this.specialDish = this.specialService.getSpecialDishes();
-      console.log(this.specialDish);
     });
   }
 
