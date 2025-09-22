@@ -55,6 +55,7 @@
 body {
   font-family: "Peyda", sans-serif;
 }
-.p-carousel-content:hover {
-  overscroll-behavior: none;
+
+.p-carousel-items-content {
+  touch-action: pan-y !important;
 }
