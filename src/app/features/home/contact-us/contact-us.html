@@ -1,1 +1,24 @@
-<app-contact-card />
+<div class="mb-5 rounded-xl md:mx-4 lg:px-8 xl:mx-16 ">
+  <div class="px-2 mx-2 md:mx-0 lg:px-0">
+    <app-divider [title]="contactUsTitle" />
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 mt-8">
+    <div class="col-span-1">
+      <!-- Telegram -->
+      <app-contact-card [icon]="telegramIcon" [title]="telegramTitle" [url]="telegramUrl"></app-contact-card>
+    </div>
+    <div class="col-span-1">
+      <!-- whats app -->
+      <app-contact-card [icon]="whatsappIcon" [title]="whatsappTitle" [url]="whatsappUrl"></app-contact-card>
+    </div>
+    <div class="col-span-1">
+      <!-- Instagram -->
+      <app-contact-card [icon]="instagramIcon" [title]="instagramTitle" [url]="instagramUrl"></app-contact-card>
+    </div>
+    <div class="col-span-1">
+      <!-- X (Twitter) -->
+      <app-contact-card [icon]="xIcon" [title]="xTitle" [url]="xUrl"></app-contact-card>
+    </div>
+
+  </div>
+</div>
