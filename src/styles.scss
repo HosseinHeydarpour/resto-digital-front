@@ -56,6 +56,6 @@ body {
   font-family: "Peyda", sans-serif;
 }
 
-.p-carousel-items-content {
+:host::ng-deep .p-carousel-items-content {
   touch-action: pan-y !important;
 }
