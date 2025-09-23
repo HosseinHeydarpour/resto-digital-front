@@ -1,1 +1,25 @@
-<p>contact-card works!</p>
+<div class="bg-white px-2  rounded-xl mx-2 grid grid-cols-5 py-8">
+  <div class="col-span-1 pr-2">
+    <i [class]="icon()" style="font-size: 2rem"></i>
+  </div>
+  <div class="col-span-3">
+    <div class="flex flex-col">
+      <div>
+        <span class="font-light">
+          در
+        </span>
+        <span>
+          {{ title() }}
+        </span>
+      </div>
+      <span class="font-light">
+        ترنج را دنبال کنید
+      </span>
+    </div>
+  </div>
+  <div class="col-span-1 flex items-center ">
+    <button (click)="navigate()" class="px-2  bg-gray-100 rounded-md cursor-pointer">
+      <i class="pi pi-arrow-left text-gray-600 font-extralight mt-2" style="font-size: 1rem"></i>
+    </button>
+  </div>
+</div>
