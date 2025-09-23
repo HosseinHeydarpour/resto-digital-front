@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Footer } from "../../layout/footer/footer";
 import { Header } from "../../layout/header/header";
+import { ContactUs } from "./contact-us/contact-us";
 import { CopyRight } from "./copy-right/copy-right";
 import { CustomersComments } from "./customers-comments/customers-comments";
 import { DiscountDish } from "./discount-dish/discount-dish";
@@ -18,8 +19,9 @@ import { RecommendedDish } from "./recommended-dish/recommended-dish";
     RecommendedDish,
     DiscountDish,
     CustomersComments,
-    CopyRight
-],
+    CopyRight,
+    ContactUs,
+  ],
   templateUrl: "./home.html",
   styleUrl: "./home.scss",
 })
