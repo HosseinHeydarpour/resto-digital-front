@@ -1,0 +1,8 @@
+:host ::ng-deep.p-button {
+  background-color: theme("colors.light-green");
+  color: theme("colors.dark-teal");
+  padding: 10px 30px;
+}
+:host ::ng-deep.p-button-label {
+  font-weight: 550 !important;
+}

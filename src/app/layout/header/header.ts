@@ -1,11 +1,12 @@
 import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+import { Dialog } from "primeng/dialog";
 import menu from "./menu.json";
 
 @Component({
   selector: "app-header",
-  imports: [ButtonModule, CommonModule],
+  imports: [ButtonModule, CommonModule, Dialog],
   templateUrl: "./header.html",
   styleUrl: "./header.scss",
 })
@@ -15,6 +16,8 @@ export class Header {
   menuItems: any[] = menu;
   // Make first item active by default
   activeIndex: number = 0;
+
+  visible: boolean = false;
 
   /**
    * Sets the active icon index.
@@ -33,5 +36,9 @@ export class Header {
     if (!this.isOpen) {
       this.searchText = "";
     }
+  }
+
+  showDialog() {
+    this.visible = true;
   }
 }
