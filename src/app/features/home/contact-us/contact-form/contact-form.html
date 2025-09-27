@@ -1,1 +1,41 @@
-<p>contact-form works!</p>
+<div class="grid grid-cols-1 md:grid-cols-8 bg-white mx-2 rounded-lg mb-5 mt-10 px-5 py-8">
+  <div class="col-span-1 md:col-span-5">
+    <form [formGroup]="contactForm" class="grid grid-cols-1 gap-4" (ngSubmit)="formSubmit()">
+      <h5>با ما در ارتباط باشید</h5>
+      <!-- Name -->
+      <div class="flex flex-col gap-2 col-span-1">
+        <label for="username">نام و نام خانوادگی :</label>
+        <input pInputText id="username" formControlName="name" required class="bg-main-background" />
+      </div>
+
+      <!-- Phone -->
+      <div class="flex flex-col gap-2 col-span-1">
+        <label for="phone">شماره تماس :</label>
+        <p-inputNumber inputId="phone" formControlName="phone" required class="w-full" />
+      </div>
+
+      <!-- Request Subject -->
+      <div class="flex flex-col gap-2 col-span-1">
+        <label for="reqSubject">موضوع درخواستی :</label>
+        <p-select id="reqSubject" formControlName="reqSubject" [options]="requests" optionLabel="name"
+          placeholder="یک مورد انتخاب کنید" class="w-full md:w-56" />
+      </div>
+
+      <!-- Message -->
+      <div class="flex flex-col gap-2 col-span-1">
+        <label for="message">موضوع پیام :</label>
+        <textarea pTextarea id="message" formControlName="message" rows="4" placeholder="متن پیام را وارد کنید."
+          class="w-full bg-main-background "></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="flex items-center justify-end">
+        <button type="submit" [disabled]="!contactForm.valid"
+          class="bg-dark-teal px-6 py-2 font-550 rounded-lg text-white">
+          ارسال پیام
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-span-1 md:col-span-3"></div>
+</div>

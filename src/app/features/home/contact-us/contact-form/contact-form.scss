@@ -1,0 +1,9 @@
+:host ::ng-deep .p-inputtext,
+:host ::ng-deep .p-select-option,
+:host ::ng-deep .p-select-label.p-placeholder,
+:host ::ng-deep .p-select-list,
+:host ::ng-deep .p-select-label,
+:host ::ng-deep .p-select-dropdown,
+:host ::ng-deep .p-textarea {
+  background-color: theme("colors.main-background");
+}
