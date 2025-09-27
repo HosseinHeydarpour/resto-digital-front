@@ -1,11 +1,12 @@
 import { Component, signal } from "@angular/core";
 
 import { ContactCard } from "../../../shared/components/contact-card/contact-card";
+import { ContactForm } from "./contact-form/contact-form";
 import { Divider } from "../../../shared/components/divider/divider";
 
 @Component({
   selector: "app-contact-us",
-  imports: [ContactCard, Divider],
+  imports: [ContactCard, Divider, ContactForm],
   templateUrl: "./contact-us.html",
   styleUrl: "./contact-us.scss",
 })
