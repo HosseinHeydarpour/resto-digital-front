@@ -34,16 +34,12 @@
       </div>
 
       <div class="hidden md:flex md:justify-end md:items-center md:ml-1">
-
-        <!-- <button
-          class="bg-light-green flex-shrink-0 text-black px-5 py-3 font-extralight ml-1 rounded-md text-sm lg:text-base lg:px-9 ">
-          ورود |
-          ثبت نام
-        </button> -->
-
         <p-button (click)="showDialog()" label=" ورود | ثبت نام"
-          class="flex-shrink-0 text-black ml-1 rounded-md text-sm lg:text-base lg:px-9 md:mr-5" />
-        <p-dialog header="Edit Profile" [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }">
+          class=" flex-shrink-0 text-black ml-1 rounded-md text-sm lg:text-base lg:px-9 md:mr-5"
+          styleClass="register-btn" />
+        <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }" [closable]="true"
+          closeIcon="pi pi-times-circle">
+          <app-register />
         </p-dialog>
       </div>
     </div>

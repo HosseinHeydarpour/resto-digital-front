@@ -2,11 +2,12 @@ import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { Dialog } from "primeng/dialog";
+import { Register } from "../../features/auth/register/register";
 import menu from "./menu.json";
 
 @Component({
   selector: "app-header",
-  imports: [ButtonModule, CommonModule, Dialog],
+  imports: [ButtonModule, CommonModule, Dialog, Register],
   templateUrl: "./header.html",
   styleUrl: "./header.scss",
 })
