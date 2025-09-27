@@ -7,6 +7,7 @@ import {
 import { Select, SelectModule } from "primeng/select";
 
 import { Component } from "@angular/core";
+import { GoogleMapsModule } from "@angular/google-maps";
 import { InputNumberModule } from "primeng/inputnumber";
 import { InputTextModule } from "primeng/inputtext";
 import { Message } from "primeng/message";
@@ -29,11 +30,17 @@ interface RequestSubject {
     Toast,
     SelectModule,
     TextareaModule,
+    GoogleMapsModule,
   ],
   templateUrl: "./contact-form.html",
   styleUrl: "./contact-form.scss",
 })
 export class ContactForm {
+  // related to google map
+  center: google.maps.LatLngLiteral = { lat: 29.885194, lng: 52.305056 };
+  zoom = 18;
+  markers: { position: google.maps.LatLngLiteral; title: string }[] = [];
+  //
   requests: RequestSubject[] = [
     { name: "انتقاد", code: "Feedback" },
     { name: "پیشنهاد", code: "Suggestion" },
@@ -51,4 +58,14 @@ export class ContactForm {
   });
 
   formSubmit() {}
+  onMapClick(event: google.maps.MapMouseEvent): void {
+    if (event.latLng) {
+      const position = event.latLng.toJSON();
+
+      this.markers.push({
+        position,
+        title: "Marker at (${position.lat}, ${position.lng}) ",
+      });
+    }
+  }
 }
