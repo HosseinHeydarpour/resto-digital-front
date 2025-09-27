@@ -13,8 +13,8 @@
       <!-- Phone -->
       <div class=" gap-4 col-span-1 mt-4 md:col-span-2 md:flex md:flex-col">
         <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
-        <p-inputNumber inputId="phone" formControlName="phone" required class="w-full"
-          inputStyleClass="w-full bg-main-background" [useGrouping]="false" />
+        <input pInputText id="phone" formControlName="phone" maxlength="11" placeholder="مثال: 09123456789"
+          class="w-full bg-main-background" />
       </div>
 
       <!-- Request Subject -->

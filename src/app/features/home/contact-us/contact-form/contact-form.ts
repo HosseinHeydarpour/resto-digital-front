@@ -1,4 +1,9 @@
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from "@angular/forms";
 import { Select, SelectModule } from "primeng/select";
 
 import { Component } from "@angular/core";
@@ -36,7 +41,10 @@ export class ContactForm {
 
   contactForm = new FormGroup({
     name: new FormControl(""),
-    phone: new FormControl(),
+    phone: new FormControl("", [
+      Validators.required,
+      Validators.pattern(/^0\d{10}$/), // starts with 0, followed by 9–10 digits
+    ]),
     reqSubject: new FormControl("Feedback"),
     message: new FormControl(""),
     // city: ["", Validators.required],
