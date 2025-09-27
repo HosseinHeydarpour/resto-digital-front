@@ -7,3 +7,8 @@
 :host ::ng-deep .p-textarea {
   background-color: theme("colors.main-background");
 }
+
+:host ::ng-deep.p-select-label.p-placeholder {
+  color: theme("colors.gray.400");
+  font-weight: 350;
+}

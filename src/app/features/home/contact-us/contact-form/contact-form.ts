@@ -35,7 +35,7 @@ export class ContactForm {
   ];
 
   contactForm = new FormGroup({
-    name: new FormControl("میلاد برزگر"),
+    name: new FormControl(""),
     phone: new FormControl(),
     reqSubject: new FormControl("Feedback"),
     message: new FormControl(""),
