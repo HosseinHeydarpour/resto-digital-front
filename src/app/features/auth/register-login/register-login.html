@@ -96,7 +96,10 @@
     <!-- Submit -->
     <div class="mt-4 col-span-2">
       <button type="submit" [disabled]="!signUpForm.valid"
-        class="bg-dark-teal w-full py-2 font-550 rounded-lg text-white">
+        class="bg-dark-teal w-full py-2 font-550 rounded-lg text-white" [ngClass]="{
+          'bg-dark-teal ' : signUpForm.valid,
+          'bg-gray-400' : !signUpForm.valid
+        }">
         ثبت نام
       </button>
     </div>
@@ -128,8 +131,10 @@
 
     <!-- Submit -->
     <div class="mt-4 col-span-2">
-      <button type="submit" [disabled]="!signInForm.valid"
-        class="bg-dark-teal w-full py-2 font-550 rounded-lg text-white">
+      <button type="submit" [disabled]="!signInForm.valid" class="w-full py-2 font-550 rounded-lg text-white" [ngClass]="{
+          'bg-dark-teal ' : signInForm.valid,
+          'bg-gray-500' : !signInForm.valid
+        }">
         ورود
       </button>
     </div>
