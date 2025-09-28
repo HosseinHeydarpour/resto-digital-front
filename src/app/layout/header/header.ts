@@ -19,7 +19,7 @@ export class Header {
   activeIndex: number = 0;
 
   visible: boolean = false;
-
+  dialogHeader = "ایجاد حساب کاربری"; // default header
   /**
    * Sets the active icon index.
    *
@@ -41,5 +41,10 @@ export class Header {
 
   showDialog() {
     this.visible = true;
+  }
+
+  onModeChange(mode: "signup" | "signin") {
+    this.dialogHeader =
+      mode === "signup" ? "ایجاد حساب کاربری" : "ورود به حساب کاربری";
   }
 }

@@ -1,3 +1,4 @@
+import { Component, EventEmitter, Output } from "@angular/core";
 import {
   FormControl,
   FormGroup,
@@ -6,7 +7,6 @@ import {
 } from "@angular/forms";
 
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
 
@@ -24,6 +24,7 @@ import { PasswordModule } from "primeng/password";
 })
 export class RegisterLogin {
   showSignUp: boolean = true;
+  @Output() modeChange = new EventEmitter<"signup" | "signin">();
 
   signUpForm = new FormGroup({
     name: new FormControl(),
@@ -41,8 +42,10 @@ export class RegisterLogin {
   formSubmit() {}
   redirectToSignUp() {
     this.showSignUp = true;
+    this.modeChange.emit("signup");
   }
   redirectToSignIn() {
     this.showSignUp = false;
+    this.modeChange.emit("signin");
   }
 }
