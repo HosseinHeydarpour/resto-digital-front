@@ -1,0 +1,91 @@
+@if (showSignUp) {
+<div>
+  <form [formGroup]="signUpForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="formSubmit()">
+    <!-- Name -->
+    <div class=" gap-4 col-span-1">
+      <label class="text-gray-500 font-extralight" for="name">نام :</label>
+      <input pInputText id="name" formControlName="name" required class="w-full" />
+    </div>
+    <!-- last name -->
+    <div class=" gap-4 col-span-1">
+      <label class="text-gray-500  font-extralight" for="lastname">نام خانوادگی :</label>
+      <input pInputText id="lastname" formControlName="name" required class="w-full" />
+    </div>
+
+    <!-- Phone -->
+    <div class="gap-4 col-span-2 mt-4 ">
+      <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
+      <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full" />
+    </div>
+
+    <!-- Email -->
+    <div class="gap-4 col-span-2 mt-4">
+      <label class="text-gray-500 font-extralight" for="email">ایمیل :</label>
+      <input type="email" id="email" pInputText formControlName="email" class="w-full">
+    </div>
+
+    <!-- Password -->
+    <div class="col-span-1 mt-4">
+      <label class="text-gray-500 font-extralight" for="password">رمز عبور:</label>
+      <p-password formControlName="password" [feedback]="false" autocomplete="off" fluid class="w-full" />
+    </div>
+
+    <!-- Repeat Password -->
+    <div class="col-span-1 mt-4">
+      <label class="text-gray-500 font-extralight" for="repeat-password">تکرار رمز عبور:</label>
+      <p-password formControlName="repeatPassword" [feedback]="false" autocomplete="off" fluid class="w-full" />
+    </div>
+
+    <!-- Submit -->
+    <div class="mt-4 col-span-2">
+      <button type="submit" [disabled]="!signUpForm.valid"
+        class="bg-dark-teal w-full py-2 font-550 rounded-lg text-white">
+        ثبت نام
+      </button>
+    </div>
+  </form>
+
+  <div class="flex justify-center mt-4 font-550">
+    <span>
+      حساب کاربری دارید؟
+    </span>
+    <span (click)="redirectToSignIn()" class="text-blue-700 px-1 cursor-pointer">اینجا</span>
+    <span>را کلیک کنید</span>
+  </div>
+</div>
+}@else if(!showSignUp){
+<div>
+  <form [formGroup]="signInForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="formSubmit()">
+    <!-- Phone -->
+    <div class="gap-4 col-span-2 mt-4 ">
+      <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
+      <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full" />
+    </div>
+
+
+    <!-- Password -->
+    <div class="col-span-2 mt-4">
+      <label class="text-gray-500 font-extralight" for="password">رمز عبور:</label>
+      <!-- <p-password id="password" [toggleMask]="true"></p-password> -->
+      <p-password formControlName="password" [feedback]="false" autocomplete="off" fluid class="w-full" />
+    </div>
+
+
+    <!-- Submit -->
+    <div class="mt-4 col-span-2">
+      <button type="submit" [disabled]="!signInForm.valid"
+        class="bg-dark-teal w-full py-2 font-550 rounded-lg text-white">
+        ورود
+      </button>
+    </div>
+  </form>
+
+  <div class="flex justify-center mt-4 font-550">
+    <span>
+      هنوز ثبت نام نکرده اید ؟
+    </span>
+    <span (click)="redirectToSignUp()" class="text-blue-700 px-1 cursor-pointer">اینجا</span>
+    <span>را کلیک کنید</span>
+  </div>
+</div>
+}
