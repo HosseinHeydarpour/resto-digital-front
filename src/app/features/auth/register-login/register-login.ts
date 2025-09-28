@@ -43,8 +43,8 @@ export class RegisterLogin {
   );
 
   signInForm = new FormGroup({
-    phone: new FormControl(),
-    password: new FormControl(),
+    phone: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
   });
 
   formSubmit() {}

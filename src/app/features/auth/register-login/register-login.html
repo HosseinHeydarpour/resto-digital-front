@@ -120,12 +120,32 @@
     <div class="gap-4 col-span-2 mt-4 ">
       <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
       <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full" />
+      @if (signInForm.get('phone')?.invalid && (signInForm.get('phone')?.dirty ||
+      signInForm.get('phone')?.touched)) {
+      <div class="alert alert-danger">
+        @if (signInForm.get('phone')?.hasError('required')) {
+        <div class="text-red-600 font-light text-xs">
+          وارد کردن شماره موبایل اجباری است
+        </div>
+        }
+      </div>
+      }
     </div>
 
     <!-- Password -->
     <div class="col-span-2 mt-4">
       <label class="text-gray-500 font-extralight" for="password">رمز عبور:</label>
       <p-password formControlName="password" [feedback]="false" autocomplete="off" fluid class="w-full" />
+      @if (signInForm.get('password')?.invalid && (signInForm.get('password')?.dirty ||
+      signInForm.get('password')?.touched)) {
+      <div class="alert alert-danger">
+        @if (signInForm.get('password')?.hasError('required')) {
+        <div class="text-red-600 font-light text-xs">
+          وارد کردن رمز عبور اجباری است
+        </div>
+        }
+      </div>
+      }
     </div>
 
 
