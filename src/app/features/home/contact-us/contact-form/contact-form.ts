@@ -10,9 +10,7 @@ import { Component } from "@angular/core";
 import { GoogleMapsModule } from "@angular/google-maps";
 import { InputNumberModule } from "primeng/inputnumber";
 import { InputTextModule } from "primeng/inputtext";
-import { Message } from "primeng/message";
 import { TextareaModule } from "primeng/textarea";
-import { Toast } from "primeng/toast";
 
 interface RequestSubject {
   name: string;
@@ -26,8 +24,6 @@ interface RequestSubject {
     InputTextModule,
     InputNumberModule,
     Select,
-    Message,
-    Toast,
     SelectModule,
     TextareaModule,
     GoogleMapsModule,
