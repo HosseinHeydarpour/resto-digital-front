@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Output } from "@angular/core";
 import {
+  AbstractControl,
   FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 import { CommonModule } from "@angular/common";
 import { InputTextModule } from "primeng/inputtext";
@@ -27,14 +28,19 @@ export class RegisterLogin {
   showSignUp: boolean = true;
   @Output() modeChange = new EventEmitter<"signup" | "signin">();
 
-  signUpForm = new FormGroup({
-    name: new FormControl("", Validators.required),
-    lastname: new FormControl("", Validators.required),
-    phone: new FormControl("", Validators.required),
-    email: new FormControl("", Validators.required),
-    password: new FormControl("", Validators.required),
-    repeatPassword: new FormControl("", Validators.required),
-  });
+  signUpForm = new FormGroup(
+    {
+      name: new FormControl("", Validators.required),
+      lastname: new FormControl("", Validators.required),
+      phone: new FormControl("", Validators.required),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", Validators.required),
+      confirmPassword: new FormControl("", [Validators.required]),
+    },
+    {
+      validators: this.passwordMatchValidator,
+    }
+  );
 
   signInForm = new FormGroup({
     phone: new FormControl(),
@@ -49,5 +55,12 @@ export class RegisterLogin {
   redirectToSignIn() {
     this.showSignUp = false;
     this.modeChange.emit("signin");
+  }
+
+  passwordMatchValidator(control: AbstractControl) {
+    return control.get("password")?.value ===
+      control.get("confirmPassword")?.value
+      ? null
+      : { mismatch: true };
   }
 }

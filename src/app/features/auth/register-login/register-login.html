@@ -83,7 +83,14 @@
     <!-- Repeat Password -->
     <div class="col-span-1 mt-4">
       <label class="text-gray-500 font-extralight" for="repeat-password">تکرار رمز عبور:</label>
-      <p-password formControlName="repeatPassword" [feedback]="false" autocomplete="off" fluid class="w-full" />
+      <p-password formControlName="confirmPassword" [feedback]="false" autocomplete="off" fluid class="w-full" />
+
+      @if (signUpForm.hasError('mismatch') && signUpForm.touched) {
+      <div class="text-red-600 font-light text-xs">
+        عدم تطابق با رمز عبور
+      </div>
+      }
+
     </div>
 
     <!-- Submit -->
@@ -112,11 +119,9 @@
       <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full" />
     </div>
 
-
     <!-- Password -->
     <div class="col-span-2 mt-4">
       <label class="text-gray-500 font-extralight" for="password">رمز عبور:</label>
-      <!-- <p-password id="password" [toggleMask]="true"></p-password> -->
       <p-password formControlName="password" [feedback]="false" autocomplete="off" fluid class="w-full" />
     </div>
 
