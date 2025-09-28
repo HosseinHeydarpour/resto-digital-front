@@ -4,6 +4,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from "@angular/forms";
 
 import { CommonModule } from "@angular/common";
@@ -27,11 +28,12 @@ export class RegisterLogin {
   @Output() modeChange = new EventEmitter<"signup" | "signin">();
 
   signUpForm = new FormGroup({
-    name: new FormControl(),
-    phone: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl(),
-    repeatPassword: new FormControl(),
+    name: new FormControl("", Validators.required),
+    lastname: new FormControl("", Validators.required),
+    phone: new FormControl("", Validators.required),
+    email: new FormControl("", Validators.required),
+    password: new FormControl("", Validators.required),
+    repeatPassword: new FormControl("", Validators.required),
   });
 
   signInForm = new FormGroup({

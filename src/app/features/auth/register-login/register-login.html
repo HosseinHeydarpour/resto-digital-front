@@ -4,12 +4,32 @@
     <!-- Name -->
     <div class=" gap-4 col-span-1">
       <label class="text-gray-500 font-extralight" for="name">نام :</label>
-      <input pInputText id="name" formControlName="name" required class="w-full" />
+      <input pInputText id="name" formControlName="name" required class="w-full form-control" />
+      @if (signUpForm.get('name')?.invalid && (signUpForm.get('name')?.dirty || signUpForm.get('name')?.touched)) {
+      <div class="alert alert-danger">
+        @if (signUpForm.get('name')?.hasError('required')) {
+        <div class="text-red-600 font-light text-xs">
+          وارد کردن نام اجباری است
+        </div>
+        }
+      </div>
+      }
+
     </div>
     <!-- last name -->
     <div class=" gap-4 col-span-1">
       <label class="text-gray-500  font-extralight" for="lastname">نام خانوادگی :</label>
-      <input pInputText id="lastname" formControlName="name" required class="w-full" />
+      <input pInputText id="lastname" formControlName="lastname" required class="w-full" />
+      @if (signUpForm.get('lastname')?.invalid && (signUpForm.get('lastname')?.dirty ||
+      signUpForm.get('lastname')?.touched)) {
+      <div class="alert alert-danger">
+        @if (signUpForm.get('lastname')?.hasError('required')) {
+        <div class="text-red-600 font-light text-xs">
+          وارد کردن نام خادنوادگی اجباری است
+        </div>
+        }
+      </div>
+      }
     </div>
 
     <!-- Phone -->
