@@ -32,7 +32,10 @@ export class RegisterLogin {
     {
       name: new FormControl("", Validators.required),
       lastname: new FormControl("", Validators.required),
-      phone: new FormControl("", Validators.required),
+      phone: new FormControl("", [
+        Validators.required,
+        Validators.pattern("^[0-9]{11}$"),
+      ]),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", Validators.required),
       confirmPassword: new FormControl("", [Validators.required]),
