@@ -66,4 +66,11 @@ export class RegisterLogin {
       ? null
       : { mismatch: true };
   }
+
+  allowOnlyNumbers(event: KeyboardEvent) {
+    const charCode = event.key.charCodeAt(0);
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault(); // block non-numeric
+    }
+  }
 }

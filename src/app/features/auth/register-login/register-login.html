@@ -35,10 +35,10 @@
     <!-- Phone -->
     <div class="gap-4 col-span-2 mt-4 ">
       <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
-      <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full" />
+      <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full"
+        (keypress)="allowOnlyNumbers($event)" />
 
-      @if (signUpForm.get('phone')?.invalid &&
-      (signUpForm.get('phone')?.dirty || signUpForm.get('phone')?.touched)) {
+      @if (signUpForm.get('phone')?.touched && signUpForm.get('phone')?.invalid) {
       <div class="alert alert-danger">
         @if (signUpForm.get('phone')?.hasError('required')) {
         <div class="text-red-600 font-light text-xs">
