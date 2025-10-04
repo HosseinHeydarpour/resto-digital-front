@@ -56,7 +56,6 @@ export class RegisterLogin {
 
   signUpFormSubmit() {
     if (this.signUpForm.valid) {
-      console.log(this.signUpForm.value);
       this.authService.registerUser(this.signUpForm.value).subscribe({
         next: (response) => {
           console.log(response);
