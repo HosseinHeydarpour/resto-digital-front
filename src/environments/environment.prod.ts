@@ -1,4 +1,6 @@
+// src/environments/environment.ts
 export const environment = {
+  production: true,
   MAIN_SITE_URL: "https://resto-digital.onrender.com",
   API: {
     USERS: {
