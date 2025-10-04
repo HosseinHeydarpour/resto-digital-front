@@ -8,9 +8,11 @@ import {
 } from "@angular/forms";
 import { Component, EventEmitter, Output } from "@angular/core";
 
+import { Authservice } from "../../../core/services/authservice";
 import { CommonModule } from "@angular/common";
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-register-login",
@@ -50,7 +52,23 @@ export class RegisterLogin {
     password: new FormControl("", Validators.required),
   });
 
-  formSubmit() {}
+  constructor(private authService: Authservice, private router: Router) {}
+
+  signUpFormSubmit() {
+    if (this.signUpForm.valid) {
+      console.log(this.signUpForm.value);
+      this.authService.registerUser(this.signUpForm.value).subscribe({
+        next: (response) => {
+          console.log(response);
+          // this.router.navigate(['/login'])
+        },
+        error: (error) => {
+          console.error("Registration failed", error);
+        },
+      });
+    }
+  }
+  registerFormSubmit() {}
   redirectToSignUp() {
     this.showSignUp = true;
     this.modeChange.emit("signup");
