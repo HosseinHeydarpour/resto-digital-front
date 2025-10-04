@@ -1,3 +1,6 @@
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
+import { Subscription, filter } from "rxjs";
+
 import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
@@ -20,14 +23,42 @@ export class Header {
 
   visible: boolean = false;
   dialogHeader = "ایجاد حساب کاربری"; // default header
-  /**
-   * Sets the active icon index.
-   *
-   * @param index - The index of the icon to mark as active.
-   *
-   * Updates the `activeIndex` property to track which icon is currently active.
-   * This is typically used to highlight the selected icon in the UI.
-   */
+
+  private routerSubscription!: Subscription;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    // Listen to router events to determine if the dialog should be open
+    this.routerSubscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.checkRouteForAuthDialog();
+      });
+    this.checkRouteForAuthDialog();
+  }
+
+  private checkRouteForAuthDialog(): void {
+    const authDialogParam =
+      this.activatedRoute.snapshot.queryParamMap.get("authDialog");
+    const modeParam = this.activatedRoute.snapshot.queryParamMap.get("mode");
+
+    if (
+      authDialogParam === "true" ||
+      modeParam === "login" ||
+      modeParam === "signup"
+    ) {
+      this.visible = true;
+      if (modeParam === "signup") {
+        this.dialogHeader = "ایجاد حساب کاربری";
+      } else if (modeParam === "login") {
+        this.dialogHeader = "ورود به حساب کاربری";
+      }
+    } else {
+      this.visible = false;
+    }
+  }
+
   setActiveIconIndex(index: number) {
     this.activeIndex = index;
   }
@@ -39,12 +70,32 @@ export class Header {
     }
   }
 
-  showDialog() {
-    this.visible = true;
+  // Renamed to be more descriptive of its new functionality
+  showAuthDialog(): void {
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: { authDialog: "true", mode: "login" }, // Set initial mode
+      queryParamsHandling: "merge",
+    });
+  }
+
+  // This method is called when the PrimeNG dialog's (onHide) event fires
+  onDialogHide(): void {
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: { authDialog: null, mode: null }, // Remove query parameters
+      queryParamsHandling: "merge",
+    });
   }
 
   onModeChange(mode: "signup" | "signin") {
     this.dialogHeader =
       mode === "signup" ? "ایجاد حساب کاربری" : "ورود به حساب کاربری";
+
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: { mode: mode },
+      queryParamsHandling: "merge",
+    });
   }
 }
