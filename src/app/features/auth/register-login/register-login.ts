@@ -60,7 +60,7 @@ export class RegisterLogin {
       this.authService.registerUser(this.signUpForm.value).subscribe({
         next: (response) => {
           console.log(response);
-          // this.router.navigate(['/login'])
+          this.router.navigate(["/protected"]);
         },
         error: (error) => {
           console.error("Registration failed", error);
