@@ -32,15 +32,15 @@ export class RegisterLogin {
 
   signUpForm = new FormGroup(
     {
-      name: new FormControl("", Validators.required),
-      lastname: new FormControl("", Validators.required),
-      phone: new FormControl("", [
+      firstName: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
+      mobileNumber: new FormControl("", [
         Validators.required,
         Validators.pattern("^[0-9]{11}$"),
       ]),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", Validators.required),
-      confirmPassword: new FormControl("", [Validators.required]),
+      passwordConfirm: new FormControl("", [Validators.required]),
     },
     {
       validators: this.passwordMatchValidator,
@@ -80,7 +80,7 @@ export class RegisterLogin {
 
   passwordMatchValidator(control: AbstractControl) {
     return control.get("password")?.value ===
-      control.get("confirmPassword")?.value
+      control.get("passwordConfirm")?.value
       ? null
       : { mismatch: true };
   }

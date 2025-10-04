@@ -1,13 +1,14 @@
 @if (showSignUp) {
 <div>
-  <form [formGroup]="signUpForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="formSubmit()">
-    <!-- Name -->
+  <form [formGroup]="signUpForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="signUpFormSubmit()">
+    <!-- firstName -->
     <div class=" gap-4 col-span-1">
-      <label class="text-gray-500 font-extralight" for="name">نام :</label>
-      <input pInputText id="name" formControlName="name" required class="w-full form-control" />
-      @if (signUpForm.get('name')?.invalid && (signUpForm.get('name')?.dirty || signUpForm.get('name')?.touched)) {
+      <label class="text-gray-500 font-extralight" for="firstName">نام :</label>
+      <input pInputText id="firstName" formControlName="firstName" required class="w-full form-control" />
+      @if (signUpForm.get('firstName')?.invalid && (signUpForm.get('firstName')?.dirty ||
+      signUpForm.get('firstName')?.touched)) {
       <div class="alert alert-danger">
-        @if (signUpForm.get('name')?.hasError('required')) {
+        @if (signUpForm.get('firstName')?.hasError('required')) {
         <div class="text-red-600 font-light text-xs">
           وارد کردن نام اجباری است
         </div>
@@ -18,12 +19,12 @@
     </div>
     <!-- last name -->
     <div class=" gap-4 col-span-1">
-      <label class="text-gray-500  font-extralight" for="lastname">نام خانوادگی :</label>
-      <input pInputText id="lastname" formControlName="lastname" required class="w-full" />
-      @if (signUpForm.get('lastname')?.invalid && (signUpForm.get('lastname')?.dirty ||
-      signUpForm.get('lastname')?.touched)) {
+      <label class="text-gray-500  font-extralight" for="lastName">نام خانوادگی :</label>
+      <input pInputText id="lastName" formControlName="lastName" required class="w-full" />
+      @if (signUpForm.get('lastName')?.invalid && (signUpForm.get('lastName')?.dirty ||
+      signUpForm.get('lastName')?.touched)) {
       <div class="alert alert-danger">
-        @if (signUpForm.get('lastname')?.hasError('required')) {
+        @if (signUpForm.get('lastName')?.hasError('required')) {
         <div class="text-red-600 font-light text-xs">
           وارد کردن نام خادنوادگی اجباری است
         </div>
@@ -32,20 +33,20 @@
       }
     </div>
 
-    <!-- Phone -->
+    <!-- mobileNumber -->
     <div class="gap-4 col-span-2 mt-4 ">
-      <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
-      <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full"
+      <label class="text-gray-500 font-extralight" for="mobileNumber">شماره تماس :</label>
+      <input pInputText id="mobileNumber" formControlName="mobileNumber" maxlength="11" class="w-full"
         (keypress)="allowOnlyNumbers($event)" />
 
-      @if (signUpForm.get('phone')?.touched && signUpForm.get('phone')?.invalid) {
+      @if (signUpForm.get('mobileNumber')?.touched && signUpForm.get('mobileNumber')?.invalid) {
       <div class="alert alert-danger">
-        @if (signUpForm.get('phone')?.hasError('required')) {
+        @if (signUpForm.get('mobileNumber')?.hasError('required')) {
         <div class="text-red-600 font-light text-xs">
           وارد کردن شماره موبایل اجباری است
         </div>
         }
-        @if (signUpForm.get('phone')?.hasError('pattern')) {
+        @if (signUpForm.get('mobileNumber')?.hasError('pattern')) {
         <div class="text-red-600 font-light text-xs">
           شماره موبایل باید فقط ۱۱ رقم باشد
         </div>
@@ -90,7 +91,7 @@
     <!-- Repeat Password -->
     <div class="col-span-1 mt-4">
       <label class="text-gray-500 font-extralight" for="repeat-password">تکرار رمز عبور:</label>
-      <p-password formControlName="confirmPassword" [feedback]="false" autocomplete="off" fluid class="w-full" />
+      <p-password formControlName="passwordConfirm" [feedback]="false" autocomplete="off" fluid class="w-full" />
 
       @if (signUpForm.hasError('mismatch') && signUpForm.touched) {
       <div class="text-red-600 font-light text-xs">
@@ -122,7 +123,7 @@
 </div>
 }@else if(!showSignUp){
 <div>
-  <form [formGroup]="signInForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="formSubmit()">
+  <form [formGroup]="signInForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="registerFormSubmit()">
     <!-- Phone -->
     <div class="gap-4 col-span-2 mt-4 ">
       <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
