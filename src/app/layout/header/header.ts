@@ -6,6 +6,7 @@ import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { Dialog } from "primeng/dialog";
+import { MessageService } from "primeng/api";
 import { RegisterLogin } from "../../features/auth/register-login/register-login";
 import menu from "./menu.json";
 
@@ -31,7 +32,8 @@ export class Header {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private authService: Authservice
+    private authService: Authservice,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -118,5 +120,12 @@ export class Header {
   logout(): void {
     this.authService.logout();
     this.isLoggedIn = false;
+
+    this.messageService.add({
+      severity: "success",
+      summary: "خروج موفق",
+      detail: "شما با موفقیت از حساب کاربری خارج شدید.",
+      life: 3000,
+    });
   }
 }
