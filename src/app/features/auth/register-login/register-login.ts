@@ -28,7 +28,6 @@ import { Router } from "@angular/router";
   ],
   templateUrl: "./register-login.html",
   styleUrl: "./register-login.scss",
-  providers: [MessageService],
 })
 export class RegisterLogin {
   showSignUp: boolean = true;
