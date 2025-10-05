@@ -160,11 +160,12 @@
 
     <!-- Submit -->
     <div class="mt-4 col-span-2">
-      <button type="submit" [disabled]="!signInForm.valid" class="w-full py-2 font-550 rounded-lg text-white" [ngClass]="{
-          'bg-dark-teal ' : signInForm.valid,
-          'bg-gray-500' : !signInForm.valid
+      <button type="submit" [disabled]="!signInForm.valid || isLoadingSignIn"
+        class="w-full py-2 font-550 rounded-lg text-white" [ngClass]="{
+               'bg-dark-teal' : signInForm.valid && !isLoadingSignIn,
+        'bg-gray-500' : !signInForm.valid || isLoadingSignIn
         }">
-        ورود
+        {{ isLoadingSignIn ? 'در حال ورود...' : 'ورود' }}
       </button>
     </div>
   </form>

@@ -32,6 +32,8 @@ import { Router } from "@angular/router";
 export class RegisterLogin {
   showSignUp: boolean = true;
   isLoadingSignUp: boolean = false; // Add this property to manage button state
+  isLoadingSignIn: boolean = false;
+
   @Output() modeChange = new EventEmitter<"signup" | "signin">();
   @Output() authSuccess = new EventEmitter<void>();
 
@@ -126,6 +128,7 @@ export class RegisterLogin {
 
   signInFormSubmit() {
     if (this.signInForm.valid) {
+      this.isLoadingSignIn = true;
       this.authService.loginUser(this.signInForm.value).subscribe({
         next: (response) => {
           console.log(response);
@@ -135,6 +138,7 @@ export class RegisterLogin {
             summary: "ورود موفق",
             detail: "شما با موفقیت وارد شدید.",
           });
+          this.isLoadingSignIn = false;
         },
         error: (error) => {
           console.error("Login failed", error);
@@ -143,8 +147,10 @@ export class RegisterLogin {
             summary: "خطا در ورود",
             detail: "رمز عبور یا ایمیل اشتباه است",
           });
+          this.isLoadingSignIn = false;
         },
       });
+      this.isLoading = false;
     }
   }
 
