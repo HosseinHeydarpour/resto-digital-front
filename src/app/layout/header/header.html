@@ -34,12 +34,19 @@
       </div>
 
       <div class="hidden md:flex md:justify-end md:items-center md:ml-1">
+        @if (!isLoggedIn) {
         <p-button (click)="showAuthDialog()" label=" ورود | ثبت نام"
           class=" flex-shrink-0 text-black ml-1 rounded-md text-sm lg:text-base lg:pق-9 md:mr-5"
           styleClass="register-btn" />
+        }
+        @if (isLoggedIn) {
+        <p-button (click)="logout()" label="خروج"
+          class="flex-shrink-0 text-black ml-1 rounded-md text-sm lg:text-base md:mr-5"
+          styleClass="logout-btn"></p-button>
+        }
         <p-dialog [(visible)]="visible" [modal]="true" [style]="{ width: '25rem' }" [closable]="true"
           closeIcon="pi pi-times-circle" [header]="dialogHeader" (onHide)="onDialogHide()">
-          <app-register-login (modeChange)="onModeChange($event)" />
+          <app-register-login (authSuccess)="onAuthSuccess()" (modeChange)="onModeChange($event)" />
         </p-dialog>
       </div>
     </div>

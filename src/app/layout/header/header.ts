@@ -1,6 +1,7 @@
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { Subscription, filter } from "rxjs";
 
+import { Authservice } from "../../core/services/authservice";
 import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
@@ -23,12 +24,19 @@ export class Header {
 
   visible: boolean = false;
   dialogHeader = "ایجاد حساب کاربری"; // default header
+  isLoggedIn = false;
 
   private routerSubscription!: Subscription;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private authService: Authservice
+  ) {}
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isTokenValid();
+
     // Listen to router events to determine if the dialog should be open
     this.routerSubscription = this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
@@ -72,6 +80,7 @@ export class Header {
 
   // Renamed to be more descriptive of its new functionality
   showAuthDialog(): void {
+    this.visible = true;
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
       queryParams: { authDialog: "true", mode: "login" }, // Set initial mode
@@ -97,5 +106,17 @@ export class Header {
       queryParams: { mode: mode },
       queryParamsHandling: "merge",
     });
+  }
+
+  // Called when user successfully registers or logs in
+  onAuthSuccess(): void {
+    this.visible = false;
+    this.isLoggedIn = true;
+  }
+
+  // 👇 Call your service logout
+  logout(): void {
+    this.authService.logout();
+    this.isLoggedIn = false;
   }
 }

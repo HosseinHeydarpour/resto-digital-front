@@ -9,10 +9,13 @@ import {
 import { Component, EventEmitter, Output } from "@angular/core";
 
 import { Authservice } from "../../../core/services/authservice";
+import { ButtonModule } from "primeng/button";
 import { CommonModule } from "@angular/common";
 import { InputTextModule } from "primeng/inputtext";
+import { MessageService } from "primeng/api";
 import { PasswordModule } from "primeng/password";
 import { Router } from "@angular/router";
+import { Toast } from "primeng/toast";
 
 @Component({
   selector: "app-register-login",
@@ -22,13 +25,17 @@ import { Router } from "@angular/router";
     ReactiveFormsModule,
     PasswordModule,
     CommonModule,
+    Toast,
+    ButtonModule,
   ],
   templateUrl: "./register-login.html",
   styleUrl: "./register-login.scss",
+  providers: [MessageService],
 })
 export class RegisterLogin {
   showSignUp: boolean = true;
   @Output() modeChange = new EventEmitter<"signup" | "signin">();
+  @Output() authSuccess = new EventEmitter<void>();
 
   signUpForm = new FormGroup(
     {
@@ -52,21 +59,45 @@ export class RegisterLogin {
     password: new FormControl("", Validators.required),
   });
 
-  constructor(private authService: Authservice, private router: Router) {}
+  constructor(
+    private authService: Authservice,
+    private router: Router,
+    private messageService: MessageService
+  ) {}
 
   signUpFormSubmit() {
     if (this.signUpForm.valid) {
       this.authService.registerUser(this.signUpForm.value).subscribe({
         next: (response) => {
           console.log(response);
-          this.router.navigate(["/protected"]);
+          this.authSuccess.emit();
+          this.messageService.add({
+            severity: "success",
+            summary: "ثبت نام موفق",
+            detail: "حساب کاربری شما با موفقیت ایجاد شد.",
+          });
         },
         error: (error) => {
           console.error("Registration failed", error);
+          // Extract specific error message from the backend if possible
+          const errorMessage =
+            error.error?.message || "خطا در ثبت نام. لطفا دوباره تلاش کنید.";
+          this.messageService.add({
+            severity: "error",
+            summary: "خطا در ثبت نام",
+            detail: errorMessage,
+          });
         },
+      });
+    } else {
+      this.messageService.add({
+        severity: "warn",
+        summary: "اطلاعات ناقص",
+        detail: "لطفا تمامی فیلدهای الزامی را پر کنید.",
       });
     }
   }
+
   registerFormSubmit() {}
   redirectToSignUp() {
     this.showSignUp = true;
