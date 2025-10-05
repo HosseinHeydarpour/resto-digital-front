@@ -109,20 +109,12 @@ export class RegisterLogin {
         },
         error: (error) => {
           console.error("Login failed", error);
-          const errorMessage =
-            error.error?.message || "خطا در ورود. لطفا دوباره تلاش کنید.";
           this.messageService.add({
             severity: "error",
             summary: "خطا در ورود",
-            detail: errorMessage,
+            detail: "رمز عبور یا ایمیل اشتباه است",
           });
         },
-      });
-    } else {
-      this.messageService.add({
-        severity: "warn",
-        summary: "اطلاعات ناقص",
-        detail: "لطفا تمامی فیلدهای الزامی را پر کنید.",
       });
     }
   }
