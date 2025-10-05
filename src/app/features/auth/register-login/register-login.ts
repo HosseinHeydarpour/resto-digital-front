@@ -15,7 +15,6 @@ import { InputTextModule } from "primeng/inputtext";
 import { MessageService } from "primeng/api";
 import { PasswordModule } from "primeng/password";
 import { Router } from "@angular/router";
-import { Toast } from "primeng/toast";
 
 @Component({
   selector: "app-register-login",
@@ -25,7 +24,6 @@ import { Toast } from "primeng/toast";
     ReactiveFormsModule,
     PasswordModule,
     CommonModule,
-    Toast,
     ButtonModule,
   ],
   templateUrl: "./register-login.html",
@@ -98,7 +96,37 @@ export class RegisterLogin {
     }
   }
 
-  signInFormSubmit() {}
+  signInFormSubmit() {
+    if (this.signInForm.valid) {
+      this.authService.loginUser(this.signInForm.value).subscribe({
+        next: (response) => {
+          console.log(response);
+          this.authSuccess.emit();
+          this.messageService.add({
+            severity: "success",
+            summary: "ورود موفق",
+            detail: "شما با موفقیت وارد شدید.",
+          });
+        },
+        error: (error) => {
+          console.error("Login failed", error);
+          const errorMessage =
+            error.error?.message || "خطا در ورود. لطفا دوباره تلاش کنید.";
+          this.messageService.add({
+            severity: "error",
+            summary: "خطا در ورود",
+            detail: errorMessage,
+          });
+        },
+      });
+    } else {
+      this.messageService.add({
+        severity: "warn",
+        summary: "اطلاعات ناقص",
+        detail: "لطفا تمامی فیلدهای الزامی را پر کنید.",
+      });
+    }
+  }
 
   redirectToSignUp() {
     this.showSignUp = true;
