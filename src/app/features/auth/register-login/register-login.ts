@@ -31,6 +31,7 @@ import { Router } from "@angular/router";
 })
 export class RegisterLogin {
   showSignUp: boolean = true;
+  isLoadingSignUp: boolean = false; // Add this property to manage button state
   @Output() modeChange = new EventEmitter<"signup" | "signin">();
   @Output() authSuccess = new EventEmitter<void>();
 
@@ -66,7 +67,9 @@ export class RegisterLogin {
 
   signUpFormSubmit() {
     this.isLoading = true; // Set loading to true when form is submitted
+
     if (this.signUpForm.valid) {
+      this.isLoadingSignUp = true;
       this.authService.registerUser(this.signUpForm.value).subscribe({
         next: (response) => {
           console.log(response);
@@ -77,6 +80,7 @@ export class RegisterLogin {
             detail: "حساب کاربری شما با موفقیت ایجاد شد.",
           });
           this.isLoading = false; // Reset loading on success
+          this.isLoadingSignUp = false; // Reset loading on success
         },
         error: (error) => {
           console.error("Registration failed", error);
@@ -106,6 +110,7 @@ export class RegisterLogin {
             detail: errorMessage,
           });
           this.isLoading = false; // Reset loading on error
+          this.isLoadingSignUp = false; // Reset loading on error
         },
       });
     } else {
@@ -115,6 +120,7 @@ export class RegisterLogin {
         detail: "لطفا تمامی فیلدهای الزامی را پر کنید.",
       });
       this.isLoading = false; // Reset loading if form is invalid before submission
+      this.isLoadingSignUp = false; // Reset loading if form is invalid before submission
     }
   }
 

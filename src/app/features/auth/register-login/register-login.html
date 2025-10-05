@@ -103,12 +103,13 @@
 
     <!-- Submit -->
     <div class="mt-4 col-span-2">
-      <button type="submit" [disabled]="!signUpForm.valid"
+      <button type="submit" [disabled]="!signUpForm.valid || isLoadingSignUp"
         class="bg-dark-teal w-full py-2 font-550 rounded-lg text-white" [ngClass]="{
-          'bg-dark-teal ' : signUpForm.valid,
-          'bg-gray-400' : !signUpForm.valid
+           'bg-dark-teal' : signUpForm.valid && !isLoadingSignUp,
+        'bg-gray-400' : !signUpForm.valid || isLoadingSignUp
         }">
-        ثبت نام
+
+        {{ isLoadingSignUp ? 'در حال ارسال اطلاعات ...' : 'ثبت نام' }}
       </button>
     </div>
   </form>
