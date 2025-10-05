@@ -55,7 +55,7 @@ export class RegisterLogin {
   );
 
   signInForm = new FormGroup({
-    phone: new FormControl("", Validators.required),
+    email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", Validators.required),
   });
 
@@ -98,7 +98,8 @@ export class RegisterLogin {
     }
   }
 
-  registerFormSubmit() {}
+  signInFormSubmit() {}
+
   redirectToSignUp() {
     this.showSignUp = true;
     this.modeChange.emit("signup");

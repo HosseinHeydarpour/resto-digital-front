@@ -123,17 +123,17 @@
 </div>
 }@else if(!showSignUp){
 <div>
-  <form [formGroup]="signInForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="registerFormSubmit()">
-    <!-- Phone -->
-    <div class="gap-4 col-span-2 mt-4 ">
-      <label class="text-gray-500 font-extralight" for="phone">شماره تماس :</label>
-      <input pInputText id="phone" formControlName="phone" maxlength="11" class="w-full" />
-      @if (signInForm.get('phone')?.invalid && (signInForm.get('phone')?.dirty ||
-      signInForm.get('phone')?.touched)) {
+  <form [formGroup]="signInForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="signInFormSubmit()">
+    <!-- Email -->
+    <div class="gap-4 col-span-2 mt-4">
+      <label class="text-gray-500 font-extralight" for="email">ایمیل :</label>
+      <input type="email" id="email" pInputText formControlName="email" class="w-full">
+      @if (signInForm.get('email')?.invalid && (signInForm.get('email')?.dirty ||
+      signInForm.get('email')?.touched)) {
       <div class="alert alert-danger">
-        @if (signInForm.get('phone')?.hasError('required')) {
+        @if (signInForm.get('email')?.hasError('required')) {
         <div class="text-red-600 font-light text-xs">
-          وارد کردن شماره موبایل اجباری است
+          وارد کردن ایمیل اجباری است
         </div>
         }
       </div>
