@@ -1,13 +1,27 @@
-<div class="fixed inset-x-0 bottom-0 bg-white shadow-lg pt-3">
+<div class="fixed inset-x-0 bottom-0 bg-white shadow-lg py-3">
   <div class="flex justify-around items-center h-16">
     <!-- Navigation Links -->
-    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-500 hover:text-gray-700">
+    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-500 hover:text-gray-700"
+      (click)="setActive('home')" [ngClass]="{
+     'text-dark-teal font-extrabold': activeLink === 'home',
+        'text-gray-500': activeLink !== 'home'
+    }">
       <i class="pi pi-home" style="font-size: 1.5rem"></i>
       <span class="text-xs">خانه</span>
+      @if (activeLink==='home') {
+      <span class="block w-1 h-1 bg-account-color rounded-full mt-1"></span>
+      }
     </a>
-    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-500 hover:text-gray-700">
+    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-500 hover:text-gray-700"
+      (click)="setActive('orders')" [ngClass]="{
+     'text-dark-teal font-extrabold': activeLink === 'orders',
+        'text-gray-500': activeLink !== 'orders'
+    }">
       <i class="pi pi-shopping-cart" style="font-size: 1.5rem"></i>
       <span class="text-xs">سفارشات</span>
+      @if (activeLink==='orders') {
+      <span class="block w-1 h-1 bg-account-color rounded-full mt-1"></span>
+      }
     </a>
 
     <!-- Central Shopping Cart Button -->
@@ -17,20 +31,33 @@
           <i class="pi pi-shopping-bag" style="font-size: 1.5rem"></i>
           <span
             class="absolute top-0 right-0 inline-block w-4 h-4 bg-account-color text-white text-xs font-bold rounded-full">
-            <span class="flex justify-center items-center mt-[2px]">0</span>
+            <span class="flex justify-center items-center mt-[2px] text-xs">10</span>
           </span>
         </button>
       </div>
     </div>
 
-    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-500 hover:text-gray-700">
+    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-500 hover:text-gray-700"
+      (click)="setActive('favorite')" [ngClass]="{
+     'text-dark-teal font-extrabold': activeLink === 'favorite',
+        'text-gray-500': activeLink !== 'favorite'
+    }">
       <i class="pi pi-heart" style="font-size: 1.5rem"></i>
       <span class="text-xs">علاقه مندی</span>
+      @if (activeLink==='favorite') {
+      <span class="block w-1 h-1 bg-account-color rounded-full mt-1"></span>
+      }
     </a>
-    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2 text-gray-800">
+    <a href="#" class="flex flex-col items-center justify-center w-1/5 gap-y-2" (click)="setActive('profile')"
+      [ngClass]="{
+     'text-dark-teal font-extrabold': activeLink === 'profile',
+        'text-gray-500': activeLink !== 'profile'
+    }">
       <i class="pi pi-user" style="font-size: 1.5rem"></i>
       <span class="text-xs">پروفایل</span>
+      @if (activeLink==='profile') {
       <span class="block w-1 h-1 bg-account-color rounded-full mt-1"></span>
+      }
     </a>
   </div>
 </div>
