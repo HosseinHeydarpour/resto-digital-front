@@ -53,7 +53,17 @@
         'text-gray-500': activeLink !== 'profile'
     }">
       <i class="pi pi-user" style="font-size: 1.5rem"></i>
-      <span class="text-xs">ورود</span>
+      <!-- <span class="text-xs">ورود</span> -->
+      @if (!isLoggedIn) {
+      <button (click)="showAuthDialog()"
+        class=" flex-shrink-0 text-black ml-1 rounded-md text-sm lg:text-base lg:pق-9 md:mr-5 cursor-pointer"
+        styleClass="register-btn">ورود</button>
+      }
+      @if (isLoggedIn) {
+      <button (click)="logout()"
+        class="flex-shrink-0 text-black ml-1 rounded-md text-sm lg:text-base md:mr-5 cursor-pointer"
+        styleClass="logout-btn">خروج</button>
+      }
       @if (activeLink==='profile') {
       <span class="block w-1 h-1 bg-account-color rounded-full mt-1"></span>
       }
@@ -61,7 +71,8 @@
   </div>
 </div>
 
-<p-dialog [header]="dialogHeader" [(visible)]="displayLoginDialog" [modal]="true" [draggable]="false"
-  [resizable]="false" [style]="{width: '80%'}">
-  <app-register-login (modeChange)="onModeChange($event)" />
+<p-dialog [header]="dialogHeader" [(visible)]="displayLoginDialog" [modal]="true" [style]="{width: '80%'}"
+  (onHide)="onDialogHide()" [closable]="true">
+
+  <app-register-login (authSuccess)="onAuthSuccess()" (modeChange)="onModeChange($event)" />
 </p-dialog>
