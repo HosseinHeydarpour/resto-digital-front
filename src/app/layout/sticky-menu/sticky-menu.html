@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<p-dialog header="enter" [(visible)]="displayLoginDialog" [modal]="true" [draggable]="false" [resizable]="false"
-  [style]="{width: '80%'}">
-  <app-register-login />
+<p-dialog [header]="dialogHeader" [(visible)]="displayLoginDialog" [modal]="true" [draggable]="false"
+  [resizable]="false" [style]="{width: '80%'}">
+  <app-register-login (modeChange)="onModeChange($event)" />
 </p-dialog>
