@@ -2,8 +2,8 @@
 <div>
   <form [formGroup]="signUpForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="signUpFormSubmit()">
     <!-- firstName -->
-    <div class=" gap-4 col-span-1">
-      <label class="text-gray-500 font-extralight" for="firstName">نام :</label>
+    <div class="gap-4 col-span-2 md:col-span-1">
+      <label class="text-gray-500 font-extralight text-sm md:text-base" for="firstName">نام :</label>
       <input pInputText id="firstName" formControlName="firstName" required class="w-full form-control" />
       @if (signUpForm.get('firstName')?.invalid && (signUpForm.get('firstName')?.dirty ||
       signUpForm.get('firstName')?.touched)) {
@@ -18,15 +18,15 @@
 
     </div>
     <!-- last name -->
-    <div class=" gap-4 col-span-1">
-      <label class="text-gray-500  font-extralight" for="lastName">نام خانوادگی :</label>
+    <div class="gap-4 mt-4 md:mt-0 col-span-2 md:col-span-1">
+      <label class="text-gray-500  font-extralight  text-sm md:text-base" for="lastName">نام خانوادگی :</label>
       <input pInputText id="lastName" formControlName="lastName" required class="w-full" />
       @if (signUpForm.get('lastName')?.invalid && (signUpForm.get('lastName')?.dirty ||
       signUpForm.get('lastName')?.touched)) {
       <div class="alert alert-danger">
         @if (signUpForm.get('lastName')?.hasError('required')) {
         <div class="text-red-600 font-light text-xs">
-          وارد کردن نام خادنوادگی اجباری است
+          وارد کردن نام خانوادگی اجباری است
         </div>
         }
       </div>
@@ -35,7 +35,7 @@
 
     <!-- mobileNumber -->
     <div class="gap-4 col-span-2 mt-4 ">
-      <label class="text-gray-500 font-extralight" for="mobileNumber">شماره تماس :</label>
+      <label class="text-gray-500 font-extralight  text-sm md:text-base" for="mobileNumber">شماره تماس :</label>
       <input pInputText id="mobileNumber" formControlName="mobileNumber" maxlength="11" class="w-full"
         (keypress)="allowOnlyNumbers($event)" />
 
@@ -58,7 +58,7 @@
 
     <!-- Email -->
     <div class="gap-4 col-span-2 mt-4">
-      <label class="text-gray-500 font-extralight" for="email">ایمیل :</label>
+      <label class="text-gray-500 font-extralight text-sm md:text-base" for="email">ایمیل :</label>
       <input type="email" id="email" pInputText formControlName="email" class="w-full">
       @if (signUpForm.get('email')?.invalid && (signUpForm.get('email')?.dirty ||
       signUpForm.get('email')?.touched)) {
@@ -74,7 +74,7 @@
 
     <!-- Password -->
     <div class="col-span-1 mt-4">
-      <label class="text-gray-500 font-extralight" for="password">رمز عبور:</label>
+      <label class="text-gray-500 font-extralight text-sm md:text-base" for="password">رمز عبور:</label>
       <p-password formControlName="password" [feedback]="false" autocomplete="off" fluid class="w-full" />
       @if (signUpForm.get('password')?.invalid && (signUpForm.get('password')?.dirty ||
       signUpForm.get('password')?.touched)) {
@@ -90,7 +90,7 @@
 
     <!-- Repeat Password -->
     <div class="col-span-1 mt-4">
-      <label class="text-gray-500 font-extralight" for="repeat-password">تکرار رمز عبور:</label>
+      <label class="text-gray-500 font-extralight text-sm md:text-base" for="repeat-password">تکرار رمز عبور:</label>
       <p-password formControlName="passwordConfirm" [feedback]="false" autocomplete="off" fluid class="w-full" />
 
       @if (signUpForm.hasError('mismatch') && signUpForm.touched) {
@@ -114,7 +114,7 @@
     </div>
   </form>
 
-  <div class="flex justify-center mt-4 font-550">
+  <div class="flex justify-center mt-4 font-550  text-sm md:text-base">
     <span>
       حساب کاربری دارید؟
     </span>
@@ -127,7 +127,7 @@
   <form [formGroup]="signInForm" class="grid grid-cols-2 gap-x-2" (ngSubmit)="signInFormSubmit()">
     <!-- Email -->
     <div class="gap-4 col-span-2 mt-4">
-      <label class="text-gray-500 font-extralight" for="email">ایمیل :</label>
+      <label class="text-gray-500 font-extralight text-sm md:text-base" for="email">ایمیل :</label>
       <input type="email" id="email" pInputText formControlName="email" class="w-full">
       @if (signInForm.get('email')?.invalid && (signInForm.get('email')?.dirty ||
       signInForm.get('email')?.touched)) {
@@ -143,7 +143,7 @@
 
     <!-- Password -->
     <div class="col-span-2 mt-4">
-      <label class="text-gray-500 font-extralight" for="password">رمز عبور:</label>
+      <label class="text-gray-500 font-extralight text-sm md:text-base" for="password">رمز عبور:</label>
       <p-password formControlName="password" [feedback]="false" autocomplete="off" fluid class="w-full" />
       @if (signInForm.get('password')?.invalid && (signInForm.get('password')?.dirty ||
       signInForm.get('password')?.touched)) {
@@ -170,7 +170,7 @@
     </div>
   </form>
 
-  <div class="flex justify-center mt-4 font-550">
+  <div class="flex justify-center mt-4 font-550 text-sm md:text-base">
     <span>
       هنوز ثبت نام نکرده اید ؟
     </span>
