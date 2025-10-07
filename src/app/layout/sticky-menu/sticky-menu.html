@@ -48,7 +48,7 @@
       <span class="block w-1 h-1 bg-account-color rounded-full mt-1"></span>
       }
     </a>
-    <a class="flex flex-col items-center justify-center w-1/5 gap-y-2" (click)="setActive('profile')" [ngClass]="{
+    <a class="flex flex-col items-center justify-center w-1/5 gap-y-2" (click)="handleProfileClick()" [ngClass]="{
      'text-dark-teal font-extrabold': activeLink === 'profile',
         'text-gray-500': activeLink !== 'profile'
     }">
@@ -60,3 +60,8 @@
     </a>
   </div>
 </div>
+
+<p-dialog header="enter" [(visible)]="displayLoginDialog" [modal]="true" [draggable]="false" [resizable]="false"
+  [style]="{width: '80%'}">
+  <app-register-login />
+</p-dialog>
